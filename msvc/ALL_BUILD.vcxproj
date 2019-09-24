@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F637B7AE-4257-355C-96B1-A2EFE9F6D55B}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>K:\Development\op3d_active\mapserver-7.4.2\msvc;K:\Development\op3d_active\mapserver-7.4.2\renderers\agg\include;K:\Development\op3d_active\mapserver-7.4.2\mapscript\v8;K:\Development\op3d_active\regex-0.12;K:\Development\op3d_active\libpng-1.4.3;K:\Development\op3d_active\jpeg-9;K:\Development\op3d_active\freetype-2.6.3\include;K:\Development\op3d_active\Proj-4.9.0\src;K:\Development\op3d_active\mapserver-7.4.2\msvc\renderers\mvt;K:\Development\op3d_active\protobuf-3.7.1;C:\Development\op3d_active\pixman-0.32.2\pixman;K:\Development\op3d_active\fribidi-0.19.6\lib;K:\Development\op3d_active\harfbuzz-2.4.0\src;K:\Development\op3d_active\libiconv-1.12\source\include;K:\Development\op3d_active\cairo-1.12.16\src;K:\Development\op3d_active\fcgi-2.4.1\include;K:\Development\op3d_active\geos-3.5.0\include;K:\Development\op3d_active\postgresql-9.3.2\src\include;K:\Development\op3d_active\gdal-2.4.0\frmts;C:\Development\op3d_active\gdal-2.4.0\alg;C:\Development\op3d_active\gdal-2.4.0\gcore;C:\Development\op3d_active\gdal-2.4.0\port;C:\Development\op3d_active\gdal-2.4.0\ogr;C:\Development\op3d_active\gdal-2.4.0\ogr\ogrsf_frmts;K:\Development\op3d_active\curl-7.63.0\include;K:\Development\op3d_active\libxml2-2.7.7\Include;K:\Development\op3d_active\libxslt-1.1.28;K:\Development\op3d_active\giflib-5.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>K:\Development\op3d_active\mapserver-7.4.2\msvc;K:\Development\op3d_active\mapserver-7.4.2\renderers\agg\include;K:\Development\op3d_active\mapserver-7.4.2\mapscript\v8;K:\Development\op3d_active\regex-0.12;K:\Development\op3d_active\libpng-1.4.3;K:\Development\op3d_active\jpeg-9;K:\Development\op3d_active\freetype-2.6.3\include;K:\Development\op3d_active\Proj-4.9.0\src;K:\Development\op3d_active\mapserver-7.4.2\msvc\renderers\mvt;K:\Development\op3d_active\protobuf-3.7.1;C:\Development\op3d_active\pixman-0.32.2\pixman;K:\Development\op3d_active\fribidi-0.19.6\lib;K:\Development\op3d_active\harfbuzz-2.4.0\src;K:\Development\op3d_active\libiconv-1.12\source\include;K:\Development\op3d_active\cairo-1.12.16\src;K:\Development\op3d_active\fcgi-2.4.1\include;K:\Development\op3d_active\geos-3.5.0\include;K:\Development\op3d_active\postgresql-9.3.2\src\include;K:\Development\op3d_active\gdal-2.4.0\frmts;C:\Development\op3d_active\gdal-2.4.0\alg;C:\Development\op3d_active\gdal-2.4.0\gcore;C:\Development\op3d_active\gdal-2.4.0\port;C:\Development\op3d_active\gdal-2.4.0\ogr;C:\Development\op3d_active\gdal-2.4.0\ogr\ogrsf_frmts;K:\Development\op3d_active\curl-7.63.0\include;K:\Development\op3d_active\libxml2-2.7.7\Include;K:\Development\op3d_active\libxslt-1.1.28;K:\Development\op3d_active\giflib-5.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>K:\Development\op3d_active\mapserver-7.4.2\msvc;K:\Development\op3d_active\mapserver-7.4.2\renderers\agg\include;K:\Development\op3d_active\mapserver-7.4.2\mapscript\v8;K:\Development\op3d_active\regex-0.12;K:\Development\op3d_active\libpng-1.4.3;K:\Development\op3d_active\jpeg-9;K:\Development\op3d_active\freetype-2.6.3\include;K:\Development\op3d_active\Proj-4.9.0\src;K:\Development\op3d_active\mapserver-7.4.2\msvc\renderers\mvt;K:\Development\op3d_active\protobuf-3.7.1;C:\Development\op3d_active\pixman-0.32.2\pixman;K:\Development\op3d_active\fribidi-0.19.6\lib;K:\Development\op3d_active\harfbuzz-2.4.0\src;K:\Development\op3d_active\libiconv-1.12\source\include;K:\Development\op3d_active\cairo-1.12.16\src;K:\Development\op3d_active\fcgi-2.4.1\include;K:\Development\op3d_active\geos-3.5.0\include;K:\Development\op3d_active\postgresql-9.3.2\src\include;K:\Development\op3d_active\gdal-2.4.0\frmts;C:\Development\op3d_active\gdal-2.4.0\alg;C:\Development\op3d_active\gdal-2.4.0\gcore;C:\Development\op3d_active\gdal-2.4.0\port;C:\Development\op3d_active\gdal-2.4.0\ogr;C:\Development\op3d_active\gdal-2.4.0\ogr\ogrsf_frmts;K:\Development\op3d_active\curl-7.63.0\include;K:\Development\op3d_active\libxml2-2.7.7\Include;K:\Development\op3d_active\libxslt-1.1.28;K:\Development\op3d_active\giflib-5.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>K:\Development\op3d_active\mapserver-7.4.2\msvc;K:\Development\op3d_active\mapserver-7.4.2\renderers\agg\include;K:\Development\op3d_active\mapserver-7.4.2\mapscript\v8;K:\Development\op3d_active\regex-0.12;K:\Development\op3d_active\libpng-1.4.3;K:\Development\op3d_active\jpeg-9;K:\Development\op3d_active\freetype-2.6.3\include;K:\Development\op3d_active\Proj-4.9.0\src;K:\Development\op3d_active\mapserver-7.4.2\msvc\renderers\mvt;K:\Development\op3d_active\protobuf-3.7.1;C:\Development\op3d_active\pixman-0.32.2\pixman;K:\Development\op3d_active\fribidi-0.19.6\lib;K:\Development\op3d_active\harfbuzz-2.4.0\src;K:\Development\op3d_active\libiconv-1.12\source\include;K:\Development\op3d_active\cairo-1.12.16\src;K:\Development\op3d_active\fcgi-2.4.1\include;K:\Development\op3d_active\geos-3.5.0\include;K:\Development\op3d_active\postgresql-9.3.2\src\include;K:\Development\op3d_active\gdal-2.4.0\frmts;C:\Development\op3d_active\gdal-2.4.0\alg;C:\Development\op3d_active\gdal-2.4.0\gcore;C:\Development\op3d_active\gdal-2.4.0\port;C:\Development\op3d_active\gdal-2.4.0\ogr;C:\Development\op3d_active\gdal-2.4.0\ogr\ogrsf_frmts;K:\Development\op3d_active\curl-7.63.0\include;K:\Development\op3d_active\libxml2-2.7.7\Include;K:\Development\op3d_active\libxslt-1.1.28;K:\Development\op3d_active\giflib-5.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="K:\Development\op3d_active\mapserver-7.4.2\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule K:/Development/op3d_active/mapserver-7.4.2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SK:/Development/op3d_active/mapserver-7.4.2 -BK:/Development/op3d_active/mapserver-7.4.2/msvc --check-stamp-file K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindCURL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindFreetype.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindGIF.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindJPEG.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindLibXml2.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindLibXslt.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPNG.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindCairo.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindFCGI.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindFriBiDi.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindGDAL.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindGEOS.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindHarfBuzz.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindICONV.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPixman.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPostgreSQL.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindProj.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindProtobufC.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPythonModule.cmake;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config-version.cmake.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config.cmake.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config.h.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-version.h.in;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeCCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeCXXCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeRCCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeSystem.cmake;K:\Development\op3d_active\mapserver-7.4.2\version.rc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule K:/Development/op3d_active/mapserver-7.4.2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SK:/Development/op3d_active/mapserver-7.4.2 -BK:/Development/op3d_active/mapserver-7.4.2/msvc --check-stamp-file K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindCURL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindFreetype.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindGIF.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindJPEG.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindLibXml2.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindLibXslt.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPNG.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindCairo.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindFCGI.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindFriBiDi.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindGDAL.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindGEOS.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindHarfBuzz.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindICONV.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPixman.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPostgreSQL.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindProj.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindProtobufC.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPythonModule.cmake;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config-version.cmake.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config.cmake.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config.h.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-version.h.in;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeCCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeCXXCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeRCCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeSystem.cmake;K:\Development\op3d_active\mapserver-7.4.2\version.rc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule K:/Development/op3d_active/mapserver-7.4.2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SK:/Development/op3d_active/mapserver-7.4.2 -BK:/Development/op3d_active/mapserver-7.4.2/msvc --check-stamp-file K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindCURL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindFreetype.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindGIF.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindJPEG.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindLibXml2.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindLibXslt.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPNG.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindCairo.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindFCGI.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindFriBiDi.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindGDAL.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindGEOS.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindHarfBuzz.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindICONV.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPixman.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPostgreSQL.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindProj.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindProtobufC.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPythonModule.cmake;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config-version.cmake.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config.cmake.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config.h.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-version.h.in;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeCCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeCXXCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeRCCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeSystem.cmake;K:\Development\op3d_active\mapserver-7.4.2\version.rc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule K:/Development/op3d_active/mapserver-7.4.2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SK:/Development/op3d_active/mapserver-7.4.2 -BK:/Development/op3d_active/mapserver-7.4.2/msvc --check-stamp-file K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindCURL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindFreetype.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindGIF.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindJPEG.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindLibXml2.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindLibXslt.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPNG.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindCairo.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindFCGI.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindFriBiDi.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindGDAL.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindGEOS.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindHarfBuzz.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindICONV.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPixman.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPostgreSQL.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindProj.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindProtobufC.cmake;K:\Development\op3d_active\mapserver-7.4.2\cmake\FindPythonModule.cmake;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config-version.cmake.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config.cmake.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-config.h.in;K:\Development\op3d_active\mapserver-7.4.2\mapserver-version.h.in;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeCCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeCXXCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeRCCompiler.cmake;K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\3.14.6\CMakeSystem.cmake;K:\Development\op3d_active\mapserver-7.4.2\version.rc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\ZERO_CHECK.vcxproj">
+      <Project>{02EC7E67-2B55-327B-B409-AE7A90FCF89E}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\legend.vcxproj">
+      <Project>{4EE5F0DD-695D-3A7A-A647-BB2A39C2F096}</Project>
+      <Name>legend</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\mapserv.vcxproj">
+      <Project>{FC11D77C-062F-30AF-9D22-0CF171873650}</Project>
+      <Name>mapserv</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\mapserver.vcxproj">
+      <Project>{23DC1E04-6B2A-3B94-873E-BEC5939F3C25}</Project>
+      <Name>mapserver</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\apache\mod_mapserver.vcxproj">
+      <Project>{84F143C1-0CF4-30CD-BF23-35E6D440F299}</Project>
+      <Name>mod_mapserver</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\msencrypt.vcxproj">
+      <Project>{946B6E35-AAAC-3E4C-BE3A-EBECF2CA1725}</Project>
+      <Name>msencrypt</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\mapscript\php\php_mapscript.vcxproj">
+      <Project>{982DF181-6CAD-3E00-9DB6-847EDE492E8B}</Project>
+      <Name>php_mapscript</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\scalebar.vcxproj">
+      <Project>{99F449C1-4E02-362F-8A45-9C66FA2A93A0}</Project>
+      <Name>scalebar</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\shp2img.vcxproj">
+      <Project>{B1F5EFD9-8662-33CE-A164-886342CF4BCC}</Project>
+      <Name>shp2img</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\shptree.vcxproj">
+      <Project>{7DB6F38B-FAE5-3FF1-ACB2-7CE578AE23A6}</Project>
+      <Name>shptree</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\shptreetst.vcxproj">
+      <Project>{3E47013B-6EB3-3E2C-B676-E35A334AF8D8}</Project>
+      <Name>shptreetst</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\shptreevis.vcxproj">
+      <Project>{97614C1C-AC37-3B7A-8383-05325CE8C5F3}</Project>
+      <Name>shptreevis</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\sortshp.vcxproj">
+      <Project>{A46CEA86-3ACB-38E8-A99E-F94349D20EF1}</Project>
+      <Name>sortshp</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\tile4ms.vcxproj">
+      <Project>{F65EDA0B-7ABB-308C-A2C9-BC56EB875851}</Project>
+      <Name>tile4ms</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

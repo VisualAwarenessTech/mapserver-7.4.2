@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\63741db061e3deee305f56a0bba111d7\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A66C0CD3-AA32-375B-8314-51FB8AD367E6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

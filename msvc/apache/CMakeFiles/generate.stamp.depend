@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPackageMessage.cmake
+K:/Development/op3d_active/mapserver-7.4.2/apache/CMakeLists.txt
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindAPACHE.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindAPR.cmake

@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E6191837-AB45-3137-A12C-1DECD82CE127}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>INSTALL</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>K:\Development\op3d_active\mapserver-7.4.2\msvc;K:\Development\op3d_active\mapserver-7.4.2\renderers\agg\include;K:\Development\op3d_active\mapserver-7.4.2\mapscript\v8;K:\Development\op3d_active\regex-0.12;K:\Development\op3d_active\libpng-1.4.3;K:\Development\op3d_active\jpeg-9;K:\Development\op3d_active\freetype-2.6.3\include;K:\Development\op3d_active\Proj-4.9.0\src;K:\Development\op3d_active\mapserver-7.4.2\msvc\renderers\mvt;K:\Development\op3d_active\protobuf-3.7.1;C:\Development\op3d_active\pixman-0.32.2\pixman;K:\Development\op3d_active\fribidi-0.19.6\lib;K:\Development\op3d_active\harfbuzz-2.4.0\src;K:\Development\op3d_active\libiconv-1.12\source\include;K:\Development\op3d_active\cairo-1.12.16\src;K:\Development\op3d_active\fcgi-2.4.1\include;K:\Development\op3d_active\geos-3.5.0\include;K:\Development\op3d_active\postgresql-9.3.2\src\include;K:\Development\op3d_active\gdal-2.4.0\frmts;C:\Development\op3d_active\gdal-2.4.0\alg;C:\Development\op3d_active\gdal-2.4.0\gcore;C:\Development\op3d_active\gdal-2.4.0\port;C:\Development\op3d_active\gdal-2.4.0\ogr;C:\Development\op3d_active\gdal-2.4.0\ogr\ogrsf_frmts;K:\Development\op3d_active\curl-7.63.0\include;K:\Development\op3d_active\libxml2-2.7.7\Include;K:\Development\op3d_active\libxslt-1.1.28;K:\Development\op3d_active\giflib-5.0.4\include;\usr\include\php;\usr\local\include\php;\usr\local\apache\php;K:\Development\op3d_active\php-7.2.22_dev\include\Zend;K:\Development\op3d_active\php-7.2.22_dev\include\main;K:\Development\op3d_active\php-7.2.22_dev\include\TSRM;K:\Development\op3d_active\mapserver-7.4.2\mapscript\php\INTERNAL;K:\Development\op3d_active\mapserver-7.4.2\mapscript\php\PHP include paths;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>K:\Development\op3d_active\mapserver-7.4.2\msvc;K:\Development\op3d_active\mapserver-7.4.2\renderers\agg\include;K:\Development\op3d_active\mapserver-7.4.2\mapscript\v8;K:\Development\op3d_active\regex-0.12;K:\Development\op3d_active\libpng-1.4.3;K:\Development\op3d_active\jpeg-9;K:\Development\op3d_active\freetype-2.6.3\include;K:\Development\op3d_active\Proj-4.9.0\src;K:\Development\op3d_active\mapserver-7.4.2\msvc\renderers\mvt;K:\Development\op3d_active\protobuf-3.7.1;C:\Development\op3d_active\pixman-0.32.2\pixman;K:\Development\op3d_active\fribidi-0.19.6\lib;K:\Development\op3d_active\harfbuzz-2.4.0\src;K:\Development\op3d_active\libiconv-1.12\source\include;K:\Development\op3d_active\cairo-1.12.16\src;K:\Development\op3d_active\fcgi-2.4.1\include;K:\Development\op3d_active\geos-3.5.0\include;K:\Development\op3d_active\postgresql-9.3.2\src\include;K:\Development\op3d_active\gdal-2.4.0\frmts;C:\Development\op3d_active\gdal-2.4.0\alg;C:\Development\op3d_active\gdal-2.4.0\gcore;C:\Development\op3d_active\gdal-2.4.0\port;C:\Development\op3d_active\gdal-2.4.0\ogr;C:\Development\op3d_active\gdal-2.4.0\ogr\ogrsf_frmts;K:\Development\op3d_active\curl-7.63.0\include;K:\Development\op3d_active\libxml2-2.7.7\Include;K:\Development\op3d_active\libxslt-1.1.28;K:\Development\op3d_active\giflib-5.0.4\include;\usr\include\php;\usr\local\include\php;\usr\local\apache\php;K:\Development\op3d_active\php-7.2.22_dev\include\Zend;K:\Development\op3d_active\php-7.2.22_dev\include\main;K:\Development\op3d_active\php-7.2.22_dev\include\TSRM;K:\Development\op3d_active\mapserver-7.4.2\mapscript\php\INTERNAL;K:\Development\op3d_active\mapserver-7.4.2\mapscript\php\PHP include paths;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>K:\Development\op3d_active\mapserver-7.4.2\msvc;K:\Development\op3d_active\mapserver-7.4.2\renderers\agg\include;K:\Development\op3d_active\mapserver-7.4.2\mapscript\v8;K:\Development\op3d_active\regex-0.12;K:\Development\op3d_active\libpng-1.4.3;K:\Development\op3d_active\jpeg-9;K:\Development\op3d_active\freetype-2.6.3\include;K:\Development\op3d_active\Proj-4.9.0\src;K:\Development\op3d_active\mapserver-7.4.2\msvc\renderers\mvt;K:\Development\op3d_active\protobuf-3.7.1;C:\Development\op3d_active\pixman-0.32.2\pixman;K:\Development\op3d_active\fribidi-0.19.6\lib;K:\Development\op3d_active\harfbuzz-2.4.0\src;K:\Development\op3d_active\libiconv-1.12\source\include;K:\Development\op3d_active\cairo-1.12.16\src;K:\Development\op3d_active\fcgi-2.4.1\include;K:\Development\op3d_active\geos-3.5.0\include;K:\Development\op3d_active\postgresql-9.3.2\src\include;K:\Development\op3d_active\gdal-2.4.0\frmts;C:\Development\op3d_active\gdal-2.4.0\alg;C:\Development\op3d_active\gdal-2.4.0\gcore;C:\Development\op3d_active\gdal-2.4.0\port;C:\Development\op3d_active\gdal-2.4.0\ogr;C:\Development\op3d_active\gdal-2.4.0\ogr\ogrsf_frmts;K:\Development\op3d_active\curl-7.63.0\include;K:\Development\op3d_active\libxml2-2.7.7\Include;K:\Development\op3d_active\libxslt-1.1.28;K:\Development\op3d_active\giflib-5.0.4\include;\usr\include\php;\usr\local\include\php;\usr\local\apache\php;K:\Development\op3d_active\php-7.2.22_dev\include\Zend;K:\Development\op3d_active\php-7.2.22_dev\include\main;K:\Development\op3d_active\php-7.2.22_dev\include\TSRM;K:\Development\op3d_active\mapserver-7.4.2\mapscript\php\INTERNAL;K:\Development\op3d_active\mapserver-7.4.2\mapscript\php\PHP include paths;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>K:\Development\op3d_active\mapserver-7.4.2\msvc;K:\Development\op3d_active\mapserver-7.4.2\renderers\agg\include;K:\Development\op3d_active\mapserver-7.4.2\mapscript\v8;K:\Development\op3d_active\regex-0.12;K:\Development\op3d_active\libpng-1.4.3;K:\Development\op3d_active\jpeg-9;K:\Development\op3d_active\freetype-2.6.3\include;K:\Development\op3d_active\Proj-4.9.0\src;K:\Development\op3d_active\mapserver-7.4.2\msvc\renderers\mvt;K:\Development\op3d_active\protobuf-3.7.1;C:\Development\op3d_active\pixman-0.32.2\pixman;K:\Development\op3d_active\fribidi-0.19.6\lib;K:\Development\op3d_active\harfbuzz-2.4.0\src;K:\Development\op3d_active\libiconv-1.12\source\include;K:\Development\op3d_active\cairo-1.12.16\src;K:\Development\op3d_active\fcgi-2.4.1\include;K:\Development\op3d_active\geos-3.5.0\include;K:\Development\op3d_active\postgresql-9.3.2\src\include;K:\Development\op3d_active\gdal-2.4.0\frmts;C:\Development\op3d_active\gdal-2.4.0\alg;C:\Development\op3d_active\gdal-2.4.0\gcore;C:\Development\op3d_active\gdal-2.4.0\port;C:\Development\op3d_active\gdal-2.4.0\ogr;C:\Development\op3d_active\gdal-2.4.0\ogr\ogrsf_frmts;K:\Development\op3d_active\curl-7.63.0\include;K:\Development\op3d_active\libxml2-2.7.7\Include;K:\Development\op3d_active\libxslt-1.1.28;K:\Development\op3d_active\giflib-5.0.4\include;\usr\include\php;\usr\local\include\php;\usr\local\apache\php;K:\Development\op3d_active\php-7.2.22_dev\include\Zend;K:\Development\op3d_active\php-7.2.22_dev\include\main;K:\Development\op3d_active\php-7.2.22_dev\include\TSRM;K:\Development\op3d_active\mapserver-7.4.2\mapscript\php\INTERNAL;K:\Development\op3d_active\mapserver-7.4.2\mapscript\php\PHP include paths;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\4787d0cfb726e5a3bf510566b0b29808\INSTALL_force.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">K:\Development\op3d_active\mapserver-7.4.2\msvc\mapscript\php\CMakeFiles\INSTALL_force</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">K:\Development\op3d_active\mapserver-7.4.2\msvc\mapscript\php\CMakeFiles\INSTALL_force</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'"> </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">K:\Development\op3d_active\mapserver-7.4.2\msvc\mapscript\php\CMakeFiles\INSTALL_force</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'"> </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">K:\Development\op3d_active\mapserver-7.4.2\msvc\mapscript\php\CMakeFiles\INSTALL_force</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\ZERO_CHECK.vcxproj">
+      <Project>{02EC7E67-2B55-327B-B409-AE7A90FCF89E}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\ALL_BUILD.vcxproj">
+      <Project>{F637B7AE-4257-355C-96B1-A2EFE9F6D55B}</Project>
+      <Name>ALL_BUILD</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2017_Debug|Win32">
+      <Configuration>vs2017_Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2017_Debug|x64">
+      <Configuration>vs2017_Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2017_Release|Win32">
+      <Configuration>vs2017_Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2017_Release|x64">
+      <Configuration>vs2017_Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{946B6E35-AAAC-3E4C-BE3A-EBECF2CA1725}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>msencrypt</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">msencrypt</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">msencrypt</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">msencrypt</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">msencrypt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">.exe</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">msencrypt</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">msencrypt</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">msencrypt</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">msencrypt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">.exe</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);..\..\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;..\..\$(GDAL_DIR)\alg;..\..\$(GDAL_DIR)\gcore;..\..\$(GDAL_DIR)\port;..\..\$(GDAL_DIR)\ogr;..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>mapserver.lib;libpng14.lib;jpeg.lib;freetype250_D.lib;proj.lib;protobuf-c.lib;pixman-1d.lib;fribidid.lib;harfbuzz.lib;libiconv.lib;cairod.lib;geos_c.lib;libpq.lib;gdal_i.lib;libcurl_imp.lib;libxml2.lib;libxslt.lib;libexslt.lib;libgiflib-5.0.4.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PNG_DIR)\projects\vstudio\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(JPEG_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FREETYPE_DIR)\builds\win32\vc2012\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROJ_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROTOBUFC_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PIXMAN_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FRIBIDI_DIR)\visual\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(HARFBUZZ_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(ICONV_DIR)\MSVC11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CAIRO_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(POSTGRES_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXML2_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXSLT_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GIF_DIR)\build.vc11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(OutDir)msencrypt.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);..\..\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;..\..\$(GDAL_DIR)\alg;..\..\$(GDAL_DIR)\gcore;..\..\$(GDAL_DIR)\port;..\..\$(GDAL_DIR)\ogr;..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>mapserver.lib;libpng14.lib;jpeg.lib;freetype250_D.lib;proj.lib;protobuf-c.lib;pixman-1d.lib;fribidid.lib;harfbuzz.lib;libiconv.lib;cairod.lib;geos_c.lib;libpq.lib;gdal_i.lib;libcurl_imp.lib;libxml2.lib;libxslt.lib;libexslt.lib;libgiflib-5.0.4.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PNG_DIR)\projects\vstudio\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(JPEG_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FREETYPE_DIR)\builds\win32\vc2012\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROJ_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROTOBUFC_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PIXMAN_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FRIBIDI_DIR)\visual\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(HARFBUZZ_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(ICONV_DIR)\MSVC11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CAIRO_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(POSTGRES_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXML2_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXSLT_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GIF_DIR)\build.vc11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(OutDir)msencrypt.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);..\..\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;..\..\$(GDAL_DIR)\alg;..\..\$(GDAL_DIR)\gcore;..\..\$(GDAL_DIR)\port;..\..\$(GDAL_DIR)\ogr;..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>mapserver.lib;libpng14.lib;jpeg.lib;freetype250_D.lib;proj.lib;protobuf-c.lib;pixman-1d.lib;fribidid.lib;harfbuzz.lib;libiconv.lib;cairod.lib;geos_c.lib;libpq.lib;gdal_i.lib;libcurl_imp.lib;libxml2.lib;libxslt.lib;libexslt.lib;libgiflib-5.0.4.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PNG_DIR)\projects\vstudio\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(JPEG_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FREETYPE_DIR)\builds\win32\vc2012\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROJ_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROTOBUFC_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PIXMAN_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FRIBIDI_DIR)\visual\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(HARFBUZZ_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(ICONV_DIR)\MSVC11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CAIRO_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(POSTGRES_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXML2_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXSLT_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GIF_DIR)\build.vc11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) </AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(OutDir)msencrypt.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);..\..\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;..\..\$(GDAL_DIR)\alg;..\..\$(GDAL_DIR)\gcore;..\..\$(GDAL_DIR)\port;..\..\$(GDAL_DIR)\ogr;..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>mapserver.lib;libpng14.lib;jpeg.lib;freetype250_D.lib;proj.lib;protobuf-c.lib;pixman-1d.lib;fribidid.lib;harfbuzz.lib;libiconv.lib;cairod.lib;geos_c.lib;libpq.lib;gdal_i.lib;libcurl_imp.lib;libxml2.lib;libxslt.lib;libexslt.lib;libgiflib-5.0.4.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PNG_DIR)\projects\vstudio\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(JPEG_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FREETYPE_DIR)\builds\win32\vc2012\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROJ_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROTOBUFC_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PIXMAN_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FRIBIDI_DIR)\visual\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(HARFBUZZ_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(ICONV_DIR)\MSVC11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CAIRO_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(POSTGRES_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXML2_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXSLT_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GIF_DIR)\build.vc11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) </AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(OutDir)msencrypt.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);..\..\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;..\..\$(GDAL_DIR)\alg;..\..\$(GDAL_DIR)\gcore;..\..\$(GDAL_DIR)\port;..\..\$(GDAL_DIR)\ogr;..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>mapserver.lib;libpng14.lib;jpeg.lib;freetype250.lib;proj.lib;protobuf-c.lib;pixman-1.lib;fribidi.lib;harfbuzz.lib;libiconv.lib;cairo.lib;geos_c.lib;libpq.lib;gdal_i.lib;libcurl_imp.lib;libxml2.lib;libxslt.lib;libexslt.lib;libgiflib-5.0.4.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PNG_DIR)\projects\vstudio\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(JPEG_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FREETYPE_DIR)\builds\win32\vc2012\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROJ_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROTOBUFC_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PIXMAN_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FRIBIDI_DIR)\visual\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(HARFBUZZ_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(ICONV_DIR)\MSVC11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CAIRO_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(POSTGRES_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXML2_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXSLT_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GIF_DIR)\build.vc11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(OutDir)msencrypt.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);..\..\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;..\..\$(GDAL_DIR)\alg;..\..\$(GDAL_DIR)\gcore;..\..\$(GDAL_DIR)\port;..\..\$(GDAL_DIR)\ogr;..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>mapserver.lib;libpng14.lib;jpeg.lib;freetype250.lib;proj.lib;protobuf-c.lib;pixman-1.lib;fribidi.lib;harfbuzz.lib;libiconv.lib;cairo.lib;geos_c.lib;libpq.lib;gdal_i.lib;libcurl_imp.lib;libxml2.lib;libxslt.lib;libexslt.lib;libgiflib-5.0.4.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PNG_DIR)\projects\vstudio\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(JPEG_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FREETYPE_DIR)\builds\win32\vc2012\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROJ_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROTOBUFC_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PIXMAN_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FRIBIDI_DIR)\visual\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(HARFBUZZ_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(ICONV_DIR)\MSVC11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CAIRO_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(POSTGRES_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXML2_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXSLT_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GIF_DIR)\build.vc11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(OutDir)msencrypt.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);..\..\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;..\..\$(GDAL_DIR)\alg;..\..\$(GDAL_DIR)\gcore;..\..\$(GDAL_DIR)\port;..\..\$(GDAL_DIR)\ogr;..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>mapserver.lib;libpng14.lib;jpeg.lib;freetype250.lib;proj.lib;protobuf-c.lib;pixman-1.lib;fribidi.lib;harfbuzz.lib;libiconv.lib;cairo.lib;geos_c.lib;libpq.lib;gdal_i.lib;libcurl_imp.lib;libxml2.lib;libxslt.lib;libexslt.lib;libgiflib-5.0.4.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PNG_DIR)\projects\vstudio\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(JPEG_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FREETYPE_DIR)\builds\win32\vc2012\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROJ_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROTOBUFC_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PIXMAN_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FRIBIDI_DIR)\visual\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(HARFBUZZ_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(ICONV_DIR)\MSVC11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CAIRO_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(POSTGRES_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXML2_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXSLT_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GIF_DIR)\build.vc11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) </AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(OutDir)msencrypt.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);..\..\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;..\..\$(GDAL_DIR)\alg;..\..\$(GDAL_DIR)\gcore;..\..\$(GDAL_DIR)\port;..\..\$(GDAL_DIR)\ogr;..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;REGEX_MALLOC;USE_GENERIC_MS_NINT;HAVE_STRING_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\;..\renderers\agg\include;..\mapscript\v8;..\..\regex-0.12;..\..\$(PNG_DIR);..\..\$(JPEG_DIR);..\..\$(FREETYPE_DIR)\include;..\..\$(PROJ_DIR)\src;.\renderers\mvt;..\..\$(PROTOBUF_DIR);C:\Development\op3d_active\$(PIXMAN_DIR)\pixman;..\..\$(FRIBIDI_DIR)\lib;..\..\$(HARFBUZZ_DIR)\src;..\..\$(ICONV_DIR)\source\include;..\..\$(CAIRO_DIR)\src;..\..\$(FCGI_DIR)\include;..\..\$(GEOS_DIR)\include;..\..\$(POSTGRES_DIR)\src\include;..\..\$(GDAL_DIR)\frmts;C:\Development\op3d_active\$(GDAL_DIR)\alg;C:\Development\op3d_active\$(GDAL_DIR)\gcore;C:\Development\op3d_active\$(GDAL_DIR)\port;C:\Development\op3d_active\$(GDAL_DIR)\ogr;C:\Development\op3d_active\$(GDAL_DIR)\ogr\ogrsf_frmts;..\..\$(CURL_DIR)\include;..\..\$(LIBXML2_DIR)\Include;..\..\$(LIBXSLT_DIR);..\..\$(GIF_DIR)\include;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>mapserver.lib;libpng14.lib;jpeg.lib;freetype250.lib;proj.lib;protobuf-c.lib;pixman-1.lib;fribidi.lib;harfbuzz.lib;libiconv.lib;cairo.lib;geos_c.lib;libpq.lib;gdal_i.lib;libcurl_imp.lib;libxml2.lib;libxslt.lib;libexslt.lib;libgiflib-5.0.4.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PNG_DIR)\projects\vstudio\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(JPEG_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FREETYPE_DIR)\builds\win32\vc2012\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROJ_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PROTOBUFC_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(PIXMAN_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(FRIBIDI_DIR)\visual\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(HARFBUZZ_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(ICONV_DIR)\MSVC11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CAIRO_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(POSTGRES_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXML2_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(LIBXSLT_DIR)\win32\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\$(GIF_DIR)\build.vc11\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) </AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(OutDir)msencrypt.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\msencrypt.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include=".\ZERO_CHECK.vcxproj">
+      <Project>{02EC7E67-2B55-327B-B409-AE7A90FCF89E}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include=".\mapserver.vcxproj">
+      <Project>{23DC1E04-6B2A-3B94-873E-BEC5939F3C25}</Project>
+      <Name>mapserver</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

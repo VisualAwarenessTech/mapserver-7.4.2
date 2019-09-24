@@ -1,0 +1,55 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CheckFunctionExists.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Compiler/MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindCURL.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindFreetype.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindGIF.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindJPEG.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindLibXml2.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindLibXslt.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPNG.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPkgConfig.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindZLIB.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Platform/WindowsPaths.cmake
+K:/Development/op3d_active/mapserver-7.4.2/CMakeLists.txt
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindCairo.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindFCGI.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindFriBiDi.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindGDAL.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindGEOS.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindHarfBuzz.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindICONV.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindPixman.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindPostgreSQL.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindProj.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindProtobufC.cmake
+K:/Development/op3d_active/mapserver-7.4.2/cmake/FindPythonModule.cmake
+K:/Development/op3d_active/mapserver-7.4.2/mapserver-config-version.cmake.in
+K:/Development/op3d_active/mapserver-7.4.2/mapserver-config.cmake.in
+K:/Development/op3d_active/mapserver-7.4.2/mapserver-config.h.in
+K:/Development/op3d_active/mapserver-7.4.2/mapserver-version.h.in
+K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/3.14.6/CMakeCCompiler.cmake
+K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/3.14.6/CMakeCXXCompiler.cmake
+K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/3.14.6/CMakeRCCompiler.cmake
+K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/3.14.6/CMakeSystem.cmake
+K:/Development/op3d_active/mapserver-7.4.2/version.rc.in

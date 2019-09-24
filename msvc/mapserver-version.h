@@ -1,0 +1,11 @@
+#ifndef _MAPSERVER_VERSION_H
+#define _MAPSERVER_VERSION_H
+
+#define MS_VERSION_MAJOR 7
+#define MS_VERSION_MINOR 5
+#define MS_VERSION_REV 0
+#define MS_VERSION "7.5-dev"
+#define MS_VERSION_NUM  70500 
+
+#endif
+

@@ -1,0 +1,179 @@
+Determining if the function strrstr exists failed with the following output:
+Change Dir: K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/MSBuild/15.0/Bin/MSBuild.exe cmTC_ba741.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.16.27034 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\math.h" /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strrstr /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ba741.dir\Debug\\" /Fd"cmTC_ba741.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _strrstr referenced in function _main [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_ba741.vcxproj]
+K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\Debug\cmTC_ba741.exe : fatal error LNK1120: 1 unresolved externals [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_ba741.vcxproj]
+
+
+Determining if the function strcasecmp exists failed with the following output:
+Change Dir: K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/MSBuild/15.0/Bin/MSBuild.exe cmTC_7507b.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.16.27034 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\math.h" /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strcasecmp /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7507b.dir\Debug\\" /Fd"cmTC_7507b.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _strcasecmp referenced in function _main [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_7507b.vcxproj]
+K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\Debug\cmTC_7507b.exe : fatal error LNK1120: 1 unresolved externals [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_7507b.vcxproj]
+
+
+Determining if the function strcasestr exists failed with the following output:
+Change Dir: K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/MSBuild/15.0/Bin/MSBuild.exe cmTC_c3e7f.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.16.27034 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\math.h" /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strcasestr /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c3e7f.dir\Debug\\" /Fd"cmTC_c3e7f.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _strcasestr referenced in function _main [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_c3e7f.vcxproj]
+K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\Debug\cmTC_c3e7f.exe : fatal error LNK1120: 1 unresolved externals [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_c3e7f.vcxproj]
+
+
+Determining if the function strlcat exists failed with the following output:
+Change Dir: K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/MSBuild/15.0/Bin/MSBuild.exe cmTC_0dcf5.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.16.27034 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\math.h" /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strlcat /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0dcf5.dir\Debug\\" /Fd"cmTC_0dcf5.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _strlcat referenced in function _main [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_0dcf5.vcxproj]
+K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\Debug\cmTC_0dcf5.exe : fatal error LNK1120: 1 unresolved externals [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_0dcf5.vcxproj]
+
+
+Determining if the function strlcpy exists failed with the following output:
+Change Dir: K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/MSBuild/15.0/Bin/MSBuild.exe cmTC_4ff92.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.16.27034 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\math.h" /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strlcpy /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4ff92.dir\Debug\\" /Fd"cmTC_4ff92.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _strlcpy referenced in function _main [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_4ff92.vcxproj]
+K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\Debug\cmTC_4ff92.exe : fatal error LNK1120: 1 unresolved externals [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_4ff92.vcxproj]
+
+
+Determining if the function strncasecmp exists failed with the following output:
+Change Dir: K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/MSBuild/15.0/Bin/MSBuild.exe cmTC_030b9.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.16.27034 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\math.h" /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strncasecmp /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_030b9.dir\Debug\\" /Fd"cmTC_030b9.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _strncasecmp referenced in function _main [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_030b9.vcxproj]
+K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\Debug\cmTC_030b9.exe : fatal error LNK1120: 1 unresolved externals [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_030b9.vcxproj]
+
+
+Determining if the function vsnprintf exists failed with the following output:
+Change Dir: K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/MSBuild/15.0/Bin/MSBuild.exe cmTC_067c8.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.16.27034 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\math.h" /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=vsnprintf /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_067c8.dir\Debug\\" /Fd"cmTC_067c8.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+CheckFunctionExists.obj : error LNK2019: unresolved external symbol _vsnprintf referenced in function _main [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_067c8.vcxproj]
+MSVCRTD.lib(vsnprintf.obj) : error LNK2001: unresolved external symbol _vsnprintf [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_067c8.vcxproj]
+MSVCRTD.lib(vsnprintf.obj) : error LNK2001: unresolved external symbol __vsnprintf [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_067c8.vcxproj]
+K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\Debug\cmTC_067c8.exe : fatal error LNK1120: 2 unresolved externals [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_067c8.vcxproj]
+
+
+Determining if the include file dlfcn.h exists failed with the following output:
+Change Dir: K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/MSBuild/15.0/Bin/MSBuild.exe cmTC_464b0.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.16.27034 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\math.h" /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_464b0.dir\Debug\\" /Fd"cmTC_464b0.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  
+  CheckIncludeFile.c
+K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: Cannot open include file: 'dlfcn.h': No such file or directory [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_464b0.vcxproj]
+
+
+Performing C SOURCE FILE Test HAVE_SYNC_FETCH_AND_ADD failed with the following output:
+Change Dir: K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/MSBuild/15.0/Bin/MSBuild.exe cmTC_dbc35.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.16.27034 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\math.h" /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D HAVE_SYNC_FETCH_AND_ADD /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dbc35.dir\Debug\\" /Fd"cmTC_dbc35.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\src.c"
+  
+  src.c
+K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\src.c(6): warning C4013: '__sync_fetch_and_add' undefined; assuming extern returning int [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_dbc35.vcxproj]
+src.obj : error LNK2019: unresolved external symbol ___sync_fetch_and_add referenced in function _main [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_dbc35.vcxproj]
+K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\Debug\cmTC_dbc35.exe : fatal error LNK1120: 1 unresolved externals [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_dbc35.vcxproj]
+
+Source file was:
+
+int main(int argc, char **argv) {
+   long x=0,y=0;
+   for(x=0;x<5;x++) {
+     if(y>1) break;
+     y=__sync_fetch_and_add(&x,1);
+   }
+}
+Determining if the function PQserverVersion exists in the pq failed with the following output:
+Change Dir: K:/Development/op3d_active/mapserver-7.4.2/msvc/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/MSBuild/15.0/Bin/MSBuild.exe cmTC_9d5ab.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.16.27034 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=PQserverVersion /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9d5ab.dir\Debug\\" /Fd"cmTC_9d5ab.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.c"
+  CheckFunctionExists.c
+  
+LINK : fatal error LNK1104: cannot open file 'pq.lib' [K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\CMakeTmp\cmTC_9d5ab.vcxproj]
+
+
