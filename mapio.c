@@ -578,7 +578,9 @@ static void msIO_Initialize( void )
 /*      But don't do it we are using FastCGI.  We will take care of     */
 /*      doing it in the libfcgi library in that case for the normal     */
 /*      cgi case, and for the fastcgi case the _setmode() call          */
-/*      causes a crash.                                                 */
+/*      causes a crash.													*/
+/*		Note: GAJ 10/2/2019 stdout not in binary mode with FASTCGI      */
+/*                 setting binary mode here got valid file output       */
 /************************************************************************/
 
 int msIO_needBinaryStdout()
@@ -591,6 +593,15 @@ int msIO_needBinaryStdout()
                "msIO_needBinaryStdout()" );
     return(MS_FAILURE);
   }
+#else
+#if defined(_WIN32) 
+	if (_setmode(_fileno(stdout), _O_BINARY) == -1) {
+		msSetError(MS_IOERR,
+			"Unable to change stdout to binary mode.",
+			"msIO_needBinaryStdout()");
+		return(MS_FAILURE);
+	}
+#endif
 #endif
 
   return MS_SUCCESS;

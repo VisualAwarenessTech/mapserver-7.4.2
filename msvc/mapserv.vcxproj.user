@@ -1,4 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/Program%20Files/Visual%20Awareness%20Technologies%20and%20Consulting%20Inc/apps/local-demo/local.map&amp;layers=ocean%20countries%20lakes%20ocean-labels%20places&amp;mode=map&amp;map_imagetype=png&amp;mapext=-180.3006+-120.2004+180.3006+120.2004&amp;imgext=-180.3006+-120.2004+180.3006+120.2004&amp;map_size=600+400&amp;imgx=300&amp;imgy=200&amp;imgxy=600+400" &gt; test.png</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/Program%20Files/Visual%20Awareness%20Technologies%20and%20Consulting%20Inc/apps/local-demo/local.map&amp;layers=ocean%20countries%20lakes%20ocean-labels%20places&amp;mode=map&amp;map_imagetype=png&amp;mapext=-180.3006+-120.2004+180.3006+120.2004&amp;imgext=-180.3006+-120.2004+180.3006+120.2004&amp;map_size=600+400&amp;imgx=300&amp;imgy=200&amp;imgxy=600+400" &gt; test.png</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">
+    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/Program%20Files/Visual%20Awareness%20Technologies%20and%20Consulting%20Inc/apps/local-demo/local.map&amp;layers=ocean%20countries%20lakes%20ocean-labels%20places&amp;mode=map&amp;map_imagetype=png&amp;mapext=-180.3006+-120.2004+180.3006+120.2004&amp;imgext=-180.3006+-120.2004+180.3006+120.2004&amp;map_size=600+400&amp;imgx=300&amp;imgy=200&amp;imgxy=600+400" &gt; test.png</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">
+    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/Program%20Files/Visual%20Awareness%20Technologies%20and%20Consulting%20Inc/apps/local-demo/local.map&amp;layers=ocean%20countries%20lakes%20ocean-labels%20places&amp;mode=map&amp;map_imagetype=png&amp;mapext=-180.3006+-120.2004+180.3006+120.2004&amp;imgext=-180.3006+-120.2004+180.3006+120.2004&amp;map_size=600+400&amp;imgx=300&amp;imgy=200&amp;imgxy=600+400" &gt; test.png</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/Program%20Files/Visual%20Awareness%20Technologies%20and%20Consulting%20Inc/apps/local-demo/local.map&amp;layers=ocean%20countries%20lakes%20ocean-labels%20places&amp;mode=map&amp;map_imagetype=png&amp;mapext=-180.3006+-120.2004+180.3006+120.2004&amp;imgext=-180.3006+-120.2004+180.3006+120.2004&amp;map_size=600+400&amp;imgx=300&amp;imgy=200&amp;imgxy=600+400" &gt; test.png</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/Program%20Files/Visual%20Awareness%20Technologies%20and%20Consulting%20Inc/apps/local-demo/local.map&amp;layers=ocean%20countries%20lakes%20ocean-labels%20places&amp;mode=map&amp;map_imagetype=png&amp;mapext=-180.3006+-120.2004+180.3006+120.2004&amp;imgext=-180.3006+-120.2004+180.3006+120.2004&amp;map_size=600+400&amp;imgx=300&amp;imgy=200&amp;imgxy=600+400" &gt; test.png</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">
+    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/Program%20Files/Visual%20Awareness%20Technologies%20and%20Consulting%20Inc/apps/local-demo/local.map&amp;layers=ocean%20countries%20lakes%20ocean-labels%20places&amp;mode=map&amp;map_imagetype=png&amp;mapext=-180.3006+-120.2004+180.3006+120.2004&amp;imgext=-180.3006+-120.2004+180.3006+120.2004&amp;map_size=600+400&amp;imgx=300&amp;imgy=200&amp;imgxy=600+400" &gt; test.png</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerDebuggerType>NativeOnly</LocalDebuggerDebuggerType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">
+    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/Program%20Files/Visual%20Awareness%20Technologies%20and%20Consulting%20Inc/apps/local-demo/local.map&amp;layers=ocean%20countries%20lakes%20ocean-labels%20places&amp;mode=map&amp;map_imagetype=png&amp;mapext=-180.3006+-120.2004+180.3006+120.2004&amp;imgext=-180.3006+-120.2004+180.3006+120.2004&amp;map_size=600+400&amp;imgx=300&amp;imgy=200&amp;imgxy=600+400" &gt; test.png</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>
