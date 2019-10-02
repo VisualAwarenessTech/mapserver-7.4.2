@@ -25,15 +25,15 @@
 #define USE_LIBXML2 1
 #define USE_FASTCGI 1
 /* #undef USE_MYSQL */
-/* #undef USE_THREAD */
-/* #undef USE_KML */
-/* #undef USE_POINT_Z_M */
+#define USE_THREAD 1
+#define USE_KML 1
+#define USE_POINT_Z_M 1
 /* #undef USE_ORACLESPATIAL */
 /* #undef USE_EXEMPI */
 #define USE_XMLMAPFILE 1
 #define USE_GENERIC_MS_NINT 1
 /* #undef POSTGIS_HAS_SERVER_VERSION */
-/* #undef USE_SVG_CAIRO */
+#define USE_SVG_CAIRO 1
 /* #undef USE_RSVG */
 /* #undef USE_SDE */
 /* #undef SDE64 */
