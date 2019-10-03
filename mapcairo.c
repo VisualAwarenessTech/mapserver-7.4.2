@@ -582,7 +582,17 @@ static void msTransformToGeospatialPDF(imageObj *img, mapObj *map, cairo_rendere
   VSIFCloseL(fp);
   fp = NULL;
 
-  hDS = GDALOpen(pszTmpFilename, GA_Update);
+  char * np_decrypted_path = NULL;
+  char ** options = NULL;
+  int haveTable = msHasRasterTable(pszTmpFilename, &np_decrypted_path, &options);
+  if (haveTable)
+  {
+	  hDS = GDALOpenEx(np_decrypted_path, GDAL_OF_RASTER | GDAL_OF_UPDATE, NULL, options, NULL);
+	  msFreeRasterTable(&np_decrypted_path, &options);
+  }
+  else
+	  hDS = GDALOpen(pszTmpFilename, GA_Update);
+
   if ( hDS != NULL ) {
     char* pszWKT = msProjectionObj2OGCWKT( &(map->projection) );
     if( pszWKT != NULL ) {

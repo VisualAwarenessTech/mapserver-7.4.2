@@ -660,8 +660,20 @@ void* msDrawRasterLayerLowOpenDataset(mapObj *map, layerObj *layer,
   if( *p_decrypted_path == NULL )
     return NULL;
 
+  char * np_decrypted_path = NULL;
+  char ** options = NULL;
+  int haveTable = msHasRasterTable(*p_decrypted_path, &np_decrypted_path, &options);
   msAcquireLock( TLOCK_GDAL );
-  return GDALOpenShared( *p_decrypted_path, GA_ReadOnly );
+  if (haveTable)
+  {
+	  GDALDatasetH Rds = GDALOpenEx(np_decrypted_path, GDAL_OF_RASTER | GDAL_OF_SHARED | GDAL_OF_READONLY, NULL, options, NULL);
+	  msFreeRasterTable(&np_decrypted_path, &options);
+	  return Rds;
+  }
+  else
+  {
+	  return GDALOpenShared(*p_decrypted_path, GA_ReadOnly);
+  }
 #endif
 }
 

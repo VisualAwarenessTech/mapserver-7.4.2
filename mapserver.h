@@ -2896,6 +2896,8 @@ void msPopulateTextSymbolForLabelAndString(textSymbolObj *ts, labelObj *l, char 
   MS_DLL_EXPORT void msEncryptStringWithKey(const unsigned char *key, const char *in, char *out);
   MS_DLL_EXPORT void msDecryptStringWithKey(const unsigned char *key, const char *in, char *out);
   MS_DLL_EXPORT char *msDecryptStringTokens(mapObj *map, const char *in);
+  MS_DLL_EXPORT int msHasRasterTable(const char *decryptstr, char ** newdecryptstr, char *** Options);
+  MS_DLL_EXPORT void msFreeRasterTable(char ** newdecryptstr, char *** Options);
   MS_DLL_EXPORT void msHexEncode(const unsigned char *in, char *out, int numbytes);
   MS_DLL_EXPORT int msHexDecode(const char *in, unsigned char *out, int numchars);
 

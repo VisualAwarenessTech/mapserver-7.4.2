@@ -831,9 +831,18 @@ int msUVRASTERLayerGetExtent(layerObj *layer, rectObj *extent)
 
   GDALAllRegister();
 
+  char * np_decrypted_path = NULL;
+  char ** options = NULL;
+  int haveTable = msHasRasterTable(decrypted_path, &np_decrypted_path, &options);
   msAcquireLock( TLOCK_GDAL );
   if( decrypted_path ) {
-    hDS = GDALOpen(decrypted_path, GA_ReadOnly );
+	if (haveTable)
+	{
+	   hDS = GDALOpenEx(np_decrypted_path, GDAL_OF_RASTER | GDAL_OF_READONLY, NULL, options, NULL);
+	   msFreeRasterTable(&np_decrypted_path, &options);
+	}
+	else
+	   hDS = GDALOpen(decrypted_path, GA_ReadOnly );
     msFree( decrypted_path );
   } else
     hDS = NULL;

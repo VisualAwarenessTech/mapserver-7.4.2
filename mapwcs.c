@@ -2711,9 +2711,17 @@ int msWCSGetCoverageMetadata( layerObj *layer, coverageMetadataObj *cm )
     if( !decrypted_path )
       return MS_FAILURE;
 
+	char * np_decrypted_path = NULL;
+	char ** options = NULL;
+	int haveTable = msHasRasterTable(decrypted_path, &np_decrypted_path, &options);
     msAcquireLock( TLOCK_GDAL );
-
-    hDS = GDALOpen( decrypted_path, GA_ReadOnly );
+	if (haveTable)
+	{
+	   hDS = GDALOpenEx(np_decrypted_path, GDAL_OF_RASTER | GDAL_OF_READONLY, NULL, options, NULL);
+	   msFreeRasterTable(&np_decrypted_path, &options);
+	}
+	else
+       hDS = GDALOpen( decrypted_path, GA_ReadOnly );
     if( hDS == NULL ) {
       const char *cpl_error_msg = CPLGetLastErrorMsg();
 

@@ -2929,8 +2929,18 @@ static int msWCSGetCoverageMetadata20(layerObj *layer, wcs20coverageMetadataObj 
     msGDALInitialize();
 
     msTryBuildPath3((char *)szPath,  layer->map->mappath, layer->map->shapepath, layer->data);
-    msAcquireLock( TLOCK_GDAL );
-    hDS = GDALOpen( szPath, GA_ReadOnly );
+
+	char * np_decrypted_path = NULL;
+	char ** options = NULL;
+	int haveTable = msHasRasterTable(szPath, &np_decrypted_path, &options);
+	msAcquireLock( TLOCK_GDAL );
+	if (haveTable)
+	{
+		hDS = GDALOpenEx(np_decrypted_path, GDAL_OF_RASTER | GDAL_OF_READONLY, NULL, options, NULL);
+		msFreeRasterTable(&np_decrypted_path, &options);
+	}
+	else
+		hDS = GDALOpen( szPath, GA_ReadOnly );
     if( hDS == NULL ) {
       msReleaseLock( TLOCK_GDAL );
       msSetError( MS_IOERR, "%s", "msWCSGetCoverageMetadata20()", CPLGetLastErrorMsg() );

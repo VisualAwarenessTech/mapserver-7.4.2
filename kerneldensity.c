@@ -313,7 +313,18 @@ int msComputeKernelDensityDataset(mapObj *map, imageObj *image, layerObj *kernel
     CPLPrintPointer(pointer, iValues, sizeof(pointer));
     snprintf(ds_string,1024,"MEM:::DATAPOINTER=%s,PIXELS=%u,LINES=%u,BANDS=1,DATATYPE=Byte,PIXELOFFSET=1,LINEOFFSET=%u",
         pointer,image->width,image->height,image->width);
-    hDS = GDALOpenShared( ds_string, GA_ReadOnly );
+
+	char * np_decrypted_path = NULL;
+	char ** options = NULL;
+	int haveTable = msHasRasterTable(ds_string, &np_decrypted_path, &options);
+	if (haveTable)
+	{
+		hDS = GDALOpenEx(np_decrypted_path, GDAL_OF_RASTER | GDAL_OF_SHARED | GDAL_OF_READONLY, NULL, options, NULL);
+		msFreeRasterTable(&np_decrypted_path, &options);
+	}
+	else
+		hDS = GDALOpenShared( ds_string, GA_ReadOnly );
+
     if(hDS==NULL) {
       msSetError(MS_MISCERR,"msComputeKernelDensityDataset()","failed to create in-memory gdal dataset for interpolated data");
       status = MS_FAILURE;

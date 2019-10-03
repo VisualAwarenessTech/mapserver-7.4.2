@@ -420,7 +420,18 @@ static int msContourLayerReadRaster(layerObj *layer, rectObj rect)
   CPLPrintPointer(pointer, clinfo->buffer, sizeof(pointer));
   sprintf(memDSPointer,"MEM:::DATAPOINTER=%s,PIXELS=%d,LINES=%d,BANDS=1,DATATYPE=Float64",
           pointer, dst_xsize, dst_ysize);
-  clinfo->hDS = GDALOpen(memDSPointer,  GA_ReadOnly);
+
+  char * np_decrypted_path = NULL;
+  char ** options = NULL;
+  int haveTable = msHasRasterTable(memDSPointer, &np_decrypted_path, &options);
+  if (haveTable)
+  {
+	  clinfo->hDS = GDALOpenEx(np_decrypted_path, GDAL_OF_RASTER | GDAL_OF_READONLY, NULL, options, NULL);
+	  msFreeRasterTable(&np_decrypted_path, &options);
+  }
+  else
+	  clinfo->hDS = GDALOpen(memDSPointer,  GA_ReadOnly);
+
   if (clinfo->hDS == NULL) {
     msSetError(MS_IMGERR,
                "Unable to open GDAL Memory dataset.",
@@ -698,10 +709,19 @@ int msContourLayerOpen(layerObj *layer)
   GDALAllRegister();
 
   /* Open the original Dataset */
+  char * np_decrypted_path = NULL;
+  char ** options = NULL;
+  int haveTable = msHasRasterTable(decrypted_path, &np_decrypted_path, &options);
 
   msAcquireLock(TLOCK_GDAL);
   if (decrypted_path) {
-    clinfo->hOrigDS = GDALOpen(decrypted_path, GA_ReadOnly);
+	if (haveTable)
+	{
+		clinfo->hOrigDS = GDALOpenEx(np_decrypted_path, GDAL_OF_RASTER | GDAL_OF_UPDATE, NULL, options, NULL);
+		msFreeRasterTable(&np_decrypted_path, &options);
+	}
+	else
+		clinfo->hOrigDS = GDALOpen(decrypted_path, GA_ReadOnly);
     msFree(decrypted_path);
   } else
     clinfo->hOrigDS = NULL;

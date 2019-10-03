@@ -481,6 +481,58 @@ char *msDecryptStringTokens(mapObj *map, const char *in)
   return outbuf;
 }
 
+int msHasRasterTable(const char *decryptstr, char ** newdecryptstr, char *** Options)
+{
+	int ret = 0;
+	if (!*decryptstr)
+		return ret;
+	char * isgpkg = strstr(decryptstr, ".gpkg");
+	if (isgpkg)
+	{
+		char * hasTable = strstr(isgpkg, ":");
+		if (hasTable)
+		{
+			ret = 1;
+			int sznstr = isgpkg - decryptstr + 7;
+			if ((*newdecryptstr = (char *)malloc(sznstr * sizeof(char))) == NULL) 
+			{
+				ret = 0;
+				msSetError(MS_MEMERR, NULL, "msHasRasterTable()");
+				return ret;
+			}
+			strlcpy(*newdecryptstr, decryptstr, sznstr-1);
+			char ** lop = NULL;
+			if ((lop = (char **)malloc(2 * sizeof(char *))) == NULL)
+			{
+				ret = 0;
+				msSetError(MS_MEMERR, NULL, "msHasRasterTable()");
+				return ret;
+			}
+			++hasTable;
+			int sztstr = strlen(hasTable) + 8;
+			if ((lop[0] = (char *)malloc(sztstr * sizeof(char))) == NULL)
+			{
+				ret = 0;
+				msSetError(MS_MEMERR, NULL, "msHasRasterTable()");
+				return ret;
+			}
+			strlcpy(lop[0], "TABLE=", 7);
+			strlcat(lop[0], hasTable, sztstr - 1);
+			lop[1] = NULL;
+			*Options = lop;
+
+		}
+	}
+	return ret;
+}
+
+void msFreeRasterTable(char ** newdecryptstr, char *** Options)
+{
+	free (*newdecryptstr);
+	char **lop = *Options;
+	free (lop[0]);
+	free (lop);
+}
 
 #ifdef TEST_MAPCRYPTO
 
