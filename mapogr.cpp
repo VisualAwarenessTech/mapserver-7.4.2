@@ -1218,52 +1218,62 @@ msOGRFileOpen(layerObj *layer, const char *connection )
   /* ------------------------------------------------------------------
    * Find the layer selected.
    * ------------------------------------------------------------------ */
-
+  
   int   nLayerIndex = 0;
   OGRLayerH     hLayer = NULL;
-
-  int  iLayer;
-
-  if( EQUALN(pszLayerDef,"SELECT ",7) ) {
-    ACQUIRE_OGR_LOCK;
-    hLayer = OGR_DS_ExecuteSQL( hDS, pszLayerDef, NULL, NULL );
-    if( hLayer == NULL ) {
-      msSetError(MS_OGRERR,
-                 "ExecuteSQL() failed. Check server logs.",
-                 "msOGRFileOpen()");
-      if( strlen(CPLGetLastErrorMsg()) == 0 )
-        msDebug("ExecuteSQL(%s) failed.\n%s\n",
-                pszLayerDef, CPLGetLastErrorMsg() );
-      RELEASE_OGR_LOCK;
-      msConnPoolRelease( layer, hDS );
-      CPLFree( pszLayerDef );
-      return NULL;
-    }
-    RELEASE_OGR_LOCK;
-    nLayerIndex = -1;
+  
+  OGRSFDriverH hDSDriver = OGR_DS_GetDriver(hDS);
+  const char * DriverName = OGR_Dr_GetName(hDSDriver);
+  if (strstr(DriverName, "ESRI Shapefile") != 0)
+  {
+	  nLayerIndex = 0;
+	  hLayer = OGR_DS_GetLayer(hDS, nLayerIndex);
   }
+  else
+  {
+	  int  iLayer;
 
-  for( iLayer = 0; hLayer == NULL && iLayer < OGR_DS_GetLayerCount(hDS); iLayer++ ) {
-    hLayer = OGR_DS_GetLayer( hDS, iLayer );
-    if( hLayer != NULL
+	  if (EQUALN(pszLayerDef, "SELECT ", 7)) {
+		  ACQUIRE_OGR_LOCK;
+		  hLayer = OGR_DS_ExecuteSQL(hDS, pszLayerDef, NULL, NULL);
+		  if (hLayer == NULL) {
+			  msSetError(MS_OGRERR,
+				  "ExecuteSQL() failed. Check server logs.",
+				  "msOGRFileOpen()");
+			  if (strlen(CPLGetLastErrorMsg()) == 0)
+				  msDebug("ExecuteSQL(%s) failed.\n%s\n",
+					  pszLayerDef, CPLGetLastErrorMsg());
+			  RELEASE_OGR_LOCK;
+			  msConnPoolRelease(layer, hDS);
+			  CPLFree(pszLayerDef);
+			  return NULL;
+		  }
+		  RELEASE_OGR_LOCK;
+		  nLayerIndex = -1;
+	  }
+
+	  for (iLayer = 0; hLayer == NULL && iLayer < OGR_DS_GetLayerCount(hDS); iLayer++) {
+		  hLayer = OGR_DS_GetLayer(hDS, iLayer);
+		  if (hLayer != NULL
 #if GDAL_VERSION_NUM >= 1800
-        && EQUAL(OGR_L_GetName(hLayer),pszLayerDef) )
+			  && EQUAL(OGR_L_GetName(hLayer), pszLayerDef))
 #else
-        && EQUAL(OGR_FD_GetName( OGR_L_GetLayerDefn(hLayer) ),pszLayerDef) )
+			  && EQUAL(OGR_FD_GetName(OGR_L_GetLayerDefn(hLayer)), pszLayerDef) )
 #endif
-    {
-      nLayerIndex = iLayer;
-      break;
-    } else
-      hLayer = NULL;
-  }
+		  {
+			  nLayerIndex = iLayer;
+			  break;
+		  }
+		  else
+			  hLayer = NULL;
+	  }
 
-  if( hLayer == NULL && (atoi(pszLayerDef) > 0 || EQUAL(pszLayerDef,"0")) ) {
-    nLayerIndex = atoi(pszLayerDef);
-    if( nLayerIndex <  OGR_DS_GetLayerCount(hDS) )
-      hLayer = OGR_DS_GetLayer( hDS, nLayerIndex );
+	  if (hLayer == NULL && (atoi(pszLayerDef) > 0 || EQUAL(pszLayerDef, "0"))) {
+		  nLayerIndex = atoi(pszLayerDef);
+		  if (nLayerIndex < OGR_DS_GetLayerCount(hDS))
+			  hLayer = OGR_DS_GetLayer(hDS, nLayerIndex);
+	  }
   }
-
   if (hLayer == NULL) {
     msSetError(MS_OGRERR, "GetLayer(%s) failed for OGR connection. Check logs.",
                "msOGRFileOpen()",
