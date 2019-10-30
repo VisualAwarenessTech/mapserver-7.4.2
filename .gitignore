@@ -20,3 +20,5 @@ msvc/src/osgPlugins/cfg/osgdb_cfg.vcxproj.user
 msvc/src/osgPlugins/fbx/osgdb_fbx.vcxproj.user
 msvc_applications-examples/examples/osgviewerFLTK/example_osgviewerFLTK.vcxproj.user
 msvc/src/osgPlugins/dw/osgdb_dw.vcxproj.user
+msvc/renderers/mvt/vector_tile.pb-c.c
+msvc/renderers/mvt/vector_tile.pb-c.h
