@@ -1175,7 +1175,9 @@ int msWFSLayerWhichShapes(layerObj *lp, rectObj rect, int isQuery)
    * ------------------------------------------------------------------ */
   if ((status = msOGRLayerOpen(lp, psInfo->pszGMLFilename)) != MS_SUCCESS)
     return status;
-
+#ifdef _DEBUG
+  msDebug("msWFSLayerWhichShapes(layerObj *lp, rectObj rect, int isQuery) Calling msOGRLayerWhichShapes(lp, rect, isQuery); with %s\n ", lp->name ? lp->name : "NULL");
+#endif
   status = msOGRLayerWhichShapes(lp, rect, isQuery);
 
   /* Mark that the OGR Layer is valid */

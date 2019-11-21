@@ -35,7 +35,7 @@
 #include "mapows.h"
 #include <string>
 #include <vector>
-
+#include "base64.h"
 #if defined(USE_OGR) || defined(USE_GDAL)
 #  include "gdal_version.h"
 #  include "cpl_conv.h"
@@ -416,6 +416,7 @@ static int ogrConvertGeometry(OGRGeometryH hGeom, shapeObj *outshp,
 
   if (hGeom == NULL) {
     // Empty geometry... this is not an error... we'll just skip it
+	outshp->type = MS_SHAPE_ATTRIBUTE;
     return MS_SUCCESS;
   }
 
@@ -605,11 +606,20 @@ static char **msOGRGetValues(layerObj *layer, OGRFeatureH hFeature)
   OGRStyleToolH hSymbolStyle = NULL;
 
   int *itemindexes = (int*)layer->iteminfo;
+  OGRFieldType *types = (OGRFieldType *)layer->itemtype;
 
   for(i=0; i<layer->numitems; i++) {
     if (itemindexes[i] >= 0) {
       // Extract regular attributes
-      values[i] = msStrdup(OGR_F_GetFieldAsString( hFeature, itemindexes[i]));
+	  if(types[i] != OFTBinary)
+		values[i] = msStrdup(OGR_F_GetFieldAsString( hFeature, itemindexes[i]));
+	  else
+	  {
+		  int binsize;
+		  int b64len;
+		  GByte * bindata = OGR_F_GetFieldAsBinary(hFeature, itemindexes[i], &binsize);
+		  values[i] = base64(bindata, binsize, &b64len);
+	  }
     } else if (itemindexes[i] == MSOGR_FID_INDEX ) {
       values[i] = msStrdup(CPLSPrintf(CPL_FRMT_GIB,
                                       (GIntBig) OGR_F_GetFID(hFeature)));
@@ -1109,6 +1119,9 @@ msOGRFileOpen(layerObj *layer, const char *connection )
 
 {
   char *conn_decrypted = NULL;
+#ifdef _DEBUG
+  msDebug("In msOGRFileOpen(layerObj *layer, const char *connection ) with Layer %s connection %s\n", layer->name ? layer->name : "NULL", connection ? connection : "NULL");
+#endif
 
   msOGRInitialize();
 
@@ -1167,7 +1180,16 @@ msOGRFileOpen(layerObj *layer, const char *connection )
   OGRDataSourceH hDS;
 
   hDS = (OGRDataSourceH) msConnPoolRequest( layer );
-
+#ifdef _DEBUG
+  if (hDS)
+  {
+	  msDebug("msOGRFileOpen(layerObj *layer, const char *connection ) found pool response for layer with connection %s\n", OGR_DS_GetName(hDS));
+	  if (!strstr(OGR_DS_GetName(hDS), connection))
+	  {
+		  msDebug("msOGRFileOpen(layerObj *layer, const char *connection ) connection mismatch %s and connection %s\n", OGR_DS_GetName(hDS), connection);
+	  }
+  }
+#endif
   /* -------------------------------------------------------------------- */
   /*      If not, open now, and register this connection with the         */
   /*      pool.                                                           */
@@ -2195,9 +2217,15 @@ static int msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *ps
         return(MS_FAILURE);
     }
 
+
     char *select = (psInfo->pszSelect) ? msStrdup(psInfo->pszSelect) : NULL;
     const rectObj rectInvalid = MS_INIT_INVALID_RECT;
     bool bIsValidRect = memcmp(&rect, &rectInvalid, sizeof(rect)) != 0;
+
+#ifdef _DEBUG
+	msDebug("In msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *psInfo) Layer %s with %s select %s \n", layer->name ? layer->name : "NULL", 
+									 OGR_L_GetName(psInfo->hLayer) ? OGR_L_GetName(psInfo->hLayer) : "NULL", select ? select : "NULL");
+#endif
 
     // we'll go strictly two possible ways: 
     // 1) GetLayer + SetFilter
@@ -2208,8 +2236,11 @@ static int msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *ps
                                         layer->sortBy.nProperties > 0 ||
                                         layer->filter.native_string ||
                                         (psInfo->bPaging && layer->maxfeatures > 0)) ) {
+#ifdef _DEBUG
+		msDebug("In msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *psInfo) Layer is ok for sql compose\n");
+#endif
 
-        const bool bHasGeometry = 
+		const bool bHasGeometry = 
                                 OGR_L_GetGeomType( psInfo->hLayer ) != wkbNone;
 
         if( psInfo->nLayerIndex == -1 && select == NULL ) {
@@ -2527,6 +2558,10 @@ static int msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *ps
             }
         }
 
+#ifdef _DEBUG
+		msDebug("Executing ExecuteSQL(%s)\n", select );
+#endif
+
         psInfo->hLayer = OGR_DS_ExecuteSQL( psInfo->hDS, select, hGeom, NULL );
         psInfo->nLayerIndex = -1;
         if( hGeom != NULL )
@@ -2546,6 +2581,9 @@ static int msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *ps
     else {
 
         // case of 1) GetLayer + SetFilter
+#ifdef _DEBUG
+		msDebug("In msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *psInfo) Not using sql compose\n");
+#endif
 
         char *pszOGRFilter = NULL;
         if (msLayerGetProcessingKey(layer, "NATIVE_FILTER") != NULL) {
@@ -2553,6 +2591,10 @@ static int msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *ps
             pszOGRFilter = msStringConcatenate(pszOGRFilter, msLayerGetProcessingKey(layer, "NATIVE_FILTER"));
             pszOGRFilter = msStringConcatenate(pszOGRFilter, ")");
         }
+
+#ifdef _DEBUG
+		msDebug("In msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *psInfo) Native Filter %s\n", pszOGRFilter?pszOGRFilter:"NULL");
+#endif
 
         if( psInfo->pszWHERE )
         {
@@ -2567,6 +2609,10 @@ static int msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *ps
                 pszOGRFilter = msStringConcatenate(pszOGRFilter, psInfo->pszWHERE);
             }
         }
+
+#ifdef _DEBUG
+		msDebug("In msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *psInfo) pazOGRFilter with where %s\n", pszOGRFilter ? pszOGRFilter : "NULL");
+#endif
 
         ACQUIRE_OGR_LOCK;
 
@@ -2612,14 +2658,31 @@ static int msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *ps
          * filter is clear.
          * ------------------------------------------------------------------ */
         if( pszOGRFilter != NULL ) {
-
+#ifdef _DEBUG		
+			msDebug("msOGRFileWhichShapes: Debug Level %d\n", layer->debug);
+#endif
             if (layer->debug >= MS_DEBUGLEVEL_VVV)
                 msDebug("msOGRFileWhichShapes: Setting attribute filter to %s\n", pszOGRFilter );
 
             CPLErrorReset();
-            if( OGR_L_SetAttributeFilter( psInfo->hLayer, pszOGRFilter ) != OGRERR_NONE ) {
+			if (OGR_L_SetAttributeFilter(psInfo->hLayer, pszOGRFilter) != OGRERR_NONE) {
+
                 msSetError(MS_OGRERR, "SetAttributeFilter() failed on layer %s. Check logs.", "msOGRFileWhichShapes()", layer->name?layer->name:"(null)");
                 msDebug("SetAttributeFilter(%s) failed on layer %s.\n%s\n", pszOGRFilter, layer->name?layer->name:"(null)", CPLGetLastErrorMsg() );
+				OGRFeatureDefnH LayerDefn = OGR_L_GetLayerDefn(psInfo->hLayer);
+				if (LayerDefn)
+				{
+					msDebug("SetAttributeFilter: Fields found in Layer\n");
+					int fieldCnt = OGR_FD_GetFieldCount(LayerDefn);
+					for (int i = 0; i < fieldCnt; ++i)
+					{
+						OGRFieldDefnH fieldDef = OGR_FD_GetFieldDefn(LayerDefn, i);
+						const char *nameref = OGR_Fld_GetNameRef(fieldDef);
+						OGRFieldType otype = OGR_Fld_GetType(fieldDef);
+						const char *otypename = OGR_GetFieldTypeName(otype);
+						msDebug("SetAttributeFilter: Field %s type %s\n", nameref, otypename);
+					}
+				}
                 RELEASE_OGR_LOCK;
                 msFree(pszOGRFilter);
                 msFree(select);
@@ -2740,6 +2803,7 @@ static char **msOGRFileGetItems(layerObj *layer, msOGRFileInfo *psInfo )
   int i, numitems,totalnumitems;
   int numStyleItems = MSOGR_LABELNUMITEMS;
   char **items;
+  int *itemtypes;
   const char *getShapeStyleItems, *value;
 
   if((hDefn = OGR_L_GetLayerDefn( psInfo->hLayer )) == NULL) {
@@ -2761,9 +2825,15 @@ static char **msOGRFileGetItems(layerObj *layer, msOGRFileInfo *psInfo )
     return NULL;
   }
 
+  if ((itemtypes = (int *)malloc(sizeof(int)*(totalnumitems + 1))) == NULL) {
+	  msSetError(MS_MEMERR, NULL, "msOGRFileGetItems()");
+	  return NULL;
+  }
+
   for(i=0; i<numitems; i++) {
     OGRFieldDefnH hField = OGR_FD_GetFieldDefn( hDefn, i );
     items[i] = msStrdup( OGR_Fld_GetNameRef( hField ));
+	itemtypes[i] = OGR_Fld_GetType(hField);
   }
 
   if (getShapeStyleItems && EQUAL(getShapeStyleItems, "all")) {
@@ -2790,7 +2860,9 @@ static char **msOGRFileGetItems(layerObj *layer, msOGRFileInfo *psInfo )
     items[i++] = msStrdup( MSOGR_LABELHCOLORNAME );
     items[i++] = msStrdup( MSOGR_LABELOCOLORNAME );
   }
-  items[i++] = NULL;
+  items[i] = NULL;
+  itemtypes[i] = NULL;
+  layer->itemtype = (void *)itemtypes;
 
   /* -------------------------------------------------------------------- */
   /*      consider populating the field definitions in metadata.          */
@@ -3041,10 +3113,53 @@ int msOGRFileReadTile( layerObj *layer, msOGRFileInfo *psInfo,
   /*      Close old tile if one is open.                                  */
   /* -------------------------------------------------------------------- */
   if( psInfo->poCurTile != NULL ) {
-    msOGRFileClose( layer, psInfo->poCurTile );
+ #ifdef _DEBUG 
+	  msDebug("In msOGRFileReadTile Entered with poCurTile set\n");
+ #endif
+	  msOGRFileClose( layer, psInfo->poCurTile );
     psInfo->poCurTile = NULL;
   }
 
+#ifdef _DEBUG
+  msDebug("In msOGRFileReadTile Layer %s target %d\n", layer->name?layer->name:"NULL", targetTile);
+ 
+  if (psInfo->hLayer)
+  {
+	  msDebug("In msOGRFileReadTile( layerObj *layer, msOGRFileInfo *psInfo, int targetTile = -1) psInfo Layer %s\n", OGR_L_GetName(psInfo->hLayer) ? OGR_L_GetName(psInfo->hLayer) : "NULL");
+  }
+  else
+  {
+	  msDebug("In msOGRFileReadTile( layerObj *layer, msOGRFileInfo *psInfo, int targetTile = -1) psInfo Layer not set\n");
+  }
+  
+  if (psInfo->pszSelect)
+	  msDebug("In msOGRReadTile select %s\n", psInfo->pszSelect);
+  else
+	  msDebug("In msOGRReadTile select is null\n");
+
+  if (psInfo->pszWHERE)
+	  msDebug("In msOGRReadTile where %s\n", psInfo->pszWHERE);
+  else
+	  msDebug("In msOGRReadTile where is null\n");
+#endif
+
+  if (layer->layerinfo)
+  {
+	  msOGRFileInfo *psInfo = (msOGRFileInfo*)layer->layerinfo;
+#ifdef _DEBUG	  
+	  if (psInfo->hLayer)
+	  {
+		  msDebug("In msOGRFileReadTile( layerObj *layer, msOGRFileInfo *psInfo, int targetTile = -1) Linked Layer %s\n", OGR_L_GetName(psInfo->hLayer) ? OGR_L_GetName(psInfo->hLayer) : "NULL");
+	  }
+#endif
+  }
+#ifdef _DEBUG 
+  else
+  {
+	  msDebug("In msOGRFileReadTile Layer info is not set\n");
+  }
+#endif
+ 
   /* -------------------------------------------------------------------- */
   /*      If -2 is passed, then seek reset reading of the tileindex.      */
   /*      We want to start from the beginning even if this file is        */
@@ -3075,8 +3190,13 @@ NextFile:
 
   if( hFeature == NULL ) {
     RELEASE_OGR_LOCK;
-    if( targetTile == -1 )
-      return MS_DONE;
+	if (targetTile == -1)
+	{
+#ifdef _DEBUG	
+		msDebug("In msOGRFileReadTile Next tile was not found. Returning\n");
+#endif
+		return MS_DONE;
+	}
     else
       return MS_FAILURE;
 
@@ -3084,6 +3204,9 @@ NextFile:
 
   connection = msStrdup( OGR_F_GetFieldAsString( hFeature,
                          layer->tileitemindex ));
+#ifdef _DEBUG						 
+  msDebug("In msOGRFileReadTile Found next connection %s\n", connection);
+#endif
 
   char* pszSRS = NULL;
   if( layer->tilesrs != NULL )
@@ -3092,20 +3215,44 @@ NextFile:
       if( idx >= 0 )
       {
           pszSRS = msStrdup( OGR_F_GetFieldAsString( hFeature, idx ));
-      }
+#ifdef _DEBUG		  
+		  msDebug("In msOGRFileReadTile pszSRS set to %s\n", pszSRS);
+#endif
+	  }
   }
 
   nFeatureId = (int)OGR_F_GetFID( hFeature ); // FIXME? GetFID() is a 64bit integer in GDAL 2.0
+#ifdef _DEBUG  
+  msDebug("In msOGRFileReadTile nFeatureID set to %d\n", nFeatureId);
+#endif
 
   OGR_F_Destroy( hFeature );
 
   RELEASE_OGR_LOCK;
 
+//  msDebug("In msOGRReadTile querry %s where %s \n", psInfo->pszSelect ? psInfo->pszSelect : "NULL", psInfo->pszWHERE ? psInfo->pszWHERE : "NULL");
+#ifdef _DEBUG
+  msDebug("In msOGRFileReadTile after OGR_LOCK Release\n");
+#endif
+
   /* -------------------------------------------------------------------- */
   /*      Open the new tile file.                                         */
   /* -------------------------------------------------------------------- */
-  psTileInfo = msOGRFileOpen( layer, connection );
+#ifdef _DEBUG
+  msDebug("In msOGRFileReadTile Opening  Connection\n");
+#endif
 
+  psTileInfo = msOGRFileOpen( layer, connection );
+  
+#ifdef _DEBUG
+  if(psTileInfo)
+	msDebug("In msOGRFileReadTile msOGRFileOpen returned %s\n", OGR_L_GetName(psTileInfo->hLayer) ? OGR_L_GetName(psTileInfo->hLayer) : "NULL");
+#endif
+
+  if (psInfo->pszSelect)
+	  psTileInfo->pszSelect = msStrdup(psInfo->pszSelect);
+  if (psInfo->pszWHERE)
+	  psTileInfo->pszWHERE = msStrdup(psInfo->pszWHERE);
   free( connection );
 
 #ifndef IGNORE_MISSING_DATA
@@ -3135,7 +3282,8 @@ NextFile:
   /* -------------------------------------------------------------------- */
   /*      Initialize the spatial query on this file.                      */
   /* -------------------------------------------------------------------- */
-  if( psInfo->rect.minx != 0 || psInfo->rect.maxx != 0 ) {
+  const bool bHasGeometry = OGR_L_GetGeomType(psTileInfo->hLayer) != wkbNone;
+  if( psInfo->rect.minx != 0 || psInfo->rect.maxx != 0 || (!bHasGeometry)) {
     rectObj rect = psInfo->rect;
 
 #ifdef USE_PROJ
@@ -3144,12 +3292,21 @@ NextFile:
       msProjectRect(&(layer->projection), &(psInfo->sTileProj), &rect);
     }
 #endif
-
+#ifdef _DEBUG
+	msDebug("In msOGRReadTile querry %s where %s\n", psInfo->pszSelect ? psInfo->pszSelect : "NULL", psInfo->pszWHERE ? psInfo->pszWHERE : "NULL");
+	msDebug("In msOGRFileReadTile Passing %s and %s \n", layer->name ? layer->name : "(null)", OGR_L_GetName(psTileInfo->hLayer) ? OGR_L_GetName(psTileInfo->hLayer) : "NULL");
+#endif
     status = msOGRFileWhichShapes( layer, rect, psTileInfo );
     if( status != MS_SUCCESS )
       return status;
   }
-
+#ifdef _DEBUG  
+  else
+  {
+	  msDebug("In msOGRFileWhichShapes bypased: rect test failed: with %s and %s \n", layer->name ? layer->name : "(null)", OGR_L_GetName(psTileInfo->hLayer) ? OGR_L_GetName(psTileInfo->hLayer) : "NULL");
+  }
+  msDebug("In msOGRFileReadTile Setting CurTile to %s\n",  OGR_L_GetName(psTileInfo->hLayer) ? OGR_L_GetName(psTileInfo->hLayer) : "NULL");
+#endif
   psInfo->poCurTile = psTileInfo;
 
   /* -------------------------------------------------------------------- */
@@ -4028,7 +4185,14 @@ int msOGRLayerOpen(layerObj *layer, const char *pszOverrideConnection)
 
   msOGRFileInfo *psInfo;
 
+#ifdef _DEBUG
+  msDebug("In msOGRLayerOpen(layerObj *layer, const char *pszOverrideConnection) Layer %s Connection %s\n", layer->name ? layer->name : "NULL", pszOverrideConnection ? pszOverrideConnection : "NULL");
+#endif
   if (layer->layerinfo != NULL) {
+#ifdef _DEBUG 
+	psInfo = (msOGRFileInfo *)layer->layerinfo;
+	msDebug("msOGRLayerOpen Layer is already opend: Contains: %s\n", OGR_L_GetName(psInfo->hLayer) ? OGR_L_GetName(psInfo->hLayer) : "NULL");
+#endif	
     return MS_SUCCESS;  // Nothing to do... layer is already opened
   }
 
@@ -4041,6 +4205,10 @@ int msOGRLayerOpen(layerObj *layer, const char *pszOverrideConnection)
                              layer->connection) );
     layer->layerinfo = psInfo;
     layer->tileitemindex = -1;
+#ifdef _DEBUG	
+	if(layer->layerinfo)
+		msDebug("msOGRLayerOpen tileindex is null opend: %s\n", OGR_L_GetName(psInfo->hLayer) ? OGR_L_GetName(psInfo->hLayer) : "NULL");
+#endif		
 
     if( layer->layerinfo == NULL )
       return MS_FAILURE;
@@ -4059,6 +4227,10 @@ int msOGRLayerOpen(layerObj *layer, const char *pszOverrideConnection)
 
     if( layer->layerinfo == NULL )
       return MS_FAILURE;
+
+#ifdef _DEBUG
+	msDebug("msOGRLayerOpen tileindex is present: opened %s\n", OGR_L_GetName(psInfo->hLayer) ? OGR_L_GetName(psInfo->hLayer) : "NULL");
+#endif
 
     // Identify TILEITEM
     OGRFeatureDefnH hDefn = OGR_L_GetLayerDefn( psInfo->hLayer );
@@ -4243,23 +4415,78 @@ int msOGRLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery)
 {
 #ifdef USE_OGR
   msOGRFileInfo *psInfo =(msOGRFileInfo*)layer->layerinfo;
+  msOGRFileInfo *psTileInfo = NULL;
+  if (psInfo->poCurTile)
+  {
+	  psTileInfo = (msOGRFileInfo*)psInfo->poCurTile;
+
+#ifdef _DEBUG	  
+	  msDebug("In msOGRLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery) CurTile is set with %s isQuery %d\n", OGR_L_GetName(psTileInfo->hLayer) ? OGR_L_GetName(psTileInfo->hLayer) : "NULL", isQuery);
+#endif
+
+	  if (isQuery)
+	  {
+
+#ifdef _DEBUG	  
+		  msDebug("In msOGRLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery) select %s where %s\n", psInfo->pszSelect ? psInfo->pszSelect : "NULL", psInfo->pszWHERE ? psInfo->pszWHERE : "NULL");
+#endif
+		  if (psInfo->pszSelect)
+			  psTileInfo->pszSelect = msStrdup(psInfo->pszSelect);
+		  if (psInfo->pszWHERE)
+			  psTileInfo->pszWHERE = msStrdup(psInfo->pszWHERE);
+
+#ifdef _DEBUG
+		  msDebug("In msOGRLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery) sending select %s where %s\n", psTileInfo->pszSelect ? psTileInfo->pszSelect : "NULL", psTileInfo->pszWHERE ? psTileInfo->pszWHERE : "NULL");
+#endif
+
+	  }
+  }
+#ifdef _DEBUG
+  else
+  {
+	  msDebug("In msOGRLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery) CurTile is not set, is isQuery %d\n", isQuery);
+  }
+#endif
+
   int   status;
 
-  if (psInfo == NULL || psInfo->hLayer == NULL) {
+  if (psTileInfo)
+  {
+	  if (psTileInfo->hLayer == NULL) {
+		  msSetError(MS_MISCERR, "Assertion failed: OGR layer for poCurTile not opened!!!",
+			  "msOGRLayerWhichShapes()");
+		  return(MS_FAILURE);
+	  }
+  }
+  else if (psInfo == NULL || psInfo->hLayer == NULL) {
     msSetError(MS_MISCERR, "Assertion failed: OGR layer not opened!!!",
                "msOGRLayerWhichShapes()");
     return(MS_FAILURE);
   }
 
-  status = msOGRFileWhichShapes( layer, rect, psInfo );
+#ifdef _DEBUG
+  if(psTileInfo)
+	  msDebug("In msOGRLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery) Layer %s with %s\n", layer->name ? layer->name : "NULL", OGR_L_GetName(psTileInfo->hLayer) ? OGR_L_GetName(psTileInfo->hLayer) : "NULL");
+  else
+	msDebug("In msOGRLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery) Layer %s with %s\n", layer->name?layer->name:"NULL", OGR_L_GetName(psInfo->hLayer)?OGR_L_GetName(psInfo->hLayer):"NULL");
+#endif
+
+  status = msOGRFileWhichShapes( layer, rect, psTileInfo ? psTileInfo: psInfo );
 
   if( status != MS_SUCCESS || layer->tileindex == NULL )
     return status;
 
   // If we are using a tile index, we need to advance to the first
   // tile matching the spatial query, and load it.
+#ifdef _DEBUG
+  msDebug("In msOGRLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery) Querry Sucessfull\n");
+#endif
+  
+  if (psInfo->poCurTile)
+	  return MS_SUCCESS;
 
-  return msOGRFileReadTile( layer, psInfo );
+//  return msOGRFileReadTile(layer, psTileInfo ? psTileInfo : psInfo);
+  return msOGRFileReadTile(layer, psInfo);
 
 #else
   /* ------------------------------------------------------------------
@@ -4284,6 +4511,9 @@ int msOGRLayerGetItems(layerObj *layer)
 {
 #ifdef USE_OGR
   msOGRFileInfo *psInfo =(msOGRFileInfo*)layer->layerinfo;
+
+  msDebug("In msOGRLayerGetItems(layerObj *layer) Layer %s Internal Layer %s\n", layer->name?layer->name:"NULL", OGR_L_GetName(psInfo->hLayer) ? OGR_L_GetName(psInfo->hLayer) : "NULL");
+ 
 
   if (psInfo == NULL || psInfo->hLayer == NULL) {
     msSetError(MS_MISCERR, "Assertion failed: OGR layer not opened!!!",
@@ -4329,6 +4559,10 @@ int msOGRLayerGetItems(layerObj *layer)
 static int msOGRLayerInitItemInfo(layerObj *layer)
 {
 #ifdef USE_OGR
+#ifdef _DEBUG
+  msDebug("In msOGRLayerInitItemInfo(layerObj *layer)\n");
+#endif
+
   msOGRFileInfo *psInfo =(msOGRFileInfo*)layer->layerinfo;
   int   i;
   OGRFeatureDefnH hDefn;
@@ -4492,6 +4726,8 @@ void msOGRLayerFreeItemInfo(layerObj *layer)
 int msOGRLayerNextShape(layerObj *layer, shapeObj *shape)
 {
 #ifdef USE_OGR
+//  msDebug("In msOGRLayerNextShape(layerObj *layer, shapeObj *shape)\n");
+
   msOGRFileInfo *psInfo =(msOGRFileInfo*)layer->layerinfo;
   int  status;
 
@@ -4554,6 +4790,11 @@ int msOGRLayerNextShape(layerObj *layer, shapeObj *shape)
 int msOGRLayerGetShape(layerObj *layer, shapeObj *shape, resultObj *record)
 {
 #ifdef USE_OGR
+
+#ifdef _DEBUG
+  msDebug("In msOGRLayerGetShape(layerObj *layer, shapeObj *shape, resultObj *record)\n");
+#endif
+
   msOGRFileInfo *psInfo =(msOGRFileInfo*)layer->layerinfo;
 
   long shapeindex = record->shapeindex;
@@ -5407,6 +5648,11 @@ static int msOGRLayerGetAutoStyle(mapObj *map, layerObj *layer, classObj *c,
                                   shapeObj* shape)
 {
 #ifdef USE_OGR
+
+#ifdef _DEBUG
+  msDebug("In msOGRLayerGetAutoStyle(mapObj *map, layerObj *layer, classObj *c, shapeObj* shape)\n");
+#endif
+
   msOGRFileInfo *psInfo =(msOGRFileInfo*)layer->layerinfo;
 
   if (psInfo == NULL || psInfo->hLayer == NULL) {
@@ -5635,6 +5881,22 @@ int msOGRLayerInitializeVirtualTable(layerObj *layer)
 {
   assert(layer != NULL);
   assert(layer->vtable != NULL);
+
+#ifdef _DEBUG
+  msDebug("In msOGRLayerInitializeVirtualTable(layerObj *layer) with Layer %s\n", layer->name?layer->name:"NULL");
+  if (layer->layerinfo)
+  {
+	  msOGRFileInfo *psInfo = (msOGRFileInfo*)layer->layerinfo;
+	  if (psInfo->hLayer)
+	  {
+		  msDebug("In msOGRLayerInitializeVirtualTable(layerObj *layer) Linked Layer %s\n", OGR_L_GetName(psInfo->hLayer) ? OGR_L_GetName(psInfo->hLayer) : "NULL");
+	  }
+  }
+  else
+  {
+	  msDebug("In msOGRLayerInitializeVirtualTable(layerObj *layer) LayerInfo is not set\n");
+  }
+#endif
 
   layer->vtable->LayerTranslateFilter = msOGRTranslateMsExpressionToOGRSQL;
 

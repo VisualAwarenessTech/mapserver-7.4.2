@@ -360,6 +360,9 @@
     <ClInclude Include="..\mapscript\v8\v8_object_wrap.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\base64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="K:\Development\op3d_active\mapserver-7.4.2\msvc\CMakeFiles\4aa67c9cb1909a2c837da114cf2ec2c3\vector_tile.pb-c.c.rule">

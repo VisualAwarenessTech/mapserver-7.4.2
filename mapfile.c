@@ -3840,6 +3840,7 @@ int initLayer(layerObj *layer, mapObj *map)
   layer->wfslayerinfo = NULL;
 
   layer->items = NULL;
+  layer->itemtype = NULL;
   layer->iteminfo = NULL;
   layer->numitems = 0;
 

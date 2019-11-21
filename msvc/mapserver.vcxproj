@@ -2038,6 +2038,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="..\renderers\agg\src\agg_font_freetype.cpp" />
     <ClCompile Include="..\renderers\agg\src\agg_line_aa_basics.cpp" />
     <ClCompile Include="..\renderers\agg\src\clipper.cpp" />
+    <ClInclude Include="..\base64.h" />
     <ClInclude Include="..\mapscript\v8\v8_object_wrap.hpp" />
     <ClCompile Include="..\mapscript\v8\point.cpp" />
     <ClCompile Include="..\mapscript\v8\line.cpp" />

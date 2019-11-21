@@ -741,7 +741,12 @@ static FilterEncodingNode* FLTGetTopBBOX(FilterEncodingNode *psNode)
 int FLTLayerApplyPlainFilterToLayer(FilterEncodingNode *psNode, mapObj *map,
                                     int iLayerIndex)
 {
-  char *pszExpression  =NULL;
+  if (map->debug == MS_DEBUGLEVEL_VVV)
+  {
+	msDebug("FLTLayerApplyPlainFilterToLayer(): Entered\n");
+  }
+
+  char *pszExpression  = NULL;
   int status =MS_FALSE;
   layerObj* lp = GET_LAYER(map, iLayerIndex);
 
@@ -753,7 +758,18 @@ int FLTLayerApplyPlainFilterToLayer(FilterEncodingNode *psNode, mapObj *map,
 
     pszUseDefaultExtent = msOWSLookupMetadata(&(lp->metadata), "F",
                                               "use_default_extent_for_getfeature");
-    if( pszUseDefaultExtent && !CSLTestBoolean(pszUseDefaultExtent) &&
+	const char *value;
+	value = msOWSLookupMetadata(&(lp->metadata), "FOG", "geomtype");
+	int noGeometry = 0;
+	if (strcasecmp(value, "None") == 0)
+		noGeometry = 1;
+
+	if ((map->debug == MS_DEBUGLEVEL_VVV) && noGeometry)
+	{
+		msDebug("FLTLayerApplyPlainFilterToLayer(): Layer Has No Geometry\n");
+	}
+
+    if( ((pszUseDefaultExtent && !CSLTestBoolean(pszUseDefaultExtent)) || noGeometry) &&
         lp->connectiontype == MS_OGR )
     {
         const rectObj rectInvalid = MS_INIT_INVALID_RECT;

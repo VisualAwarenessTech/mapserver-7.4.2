@@ -25,7 +25,7 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">
-    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/Program%20Files/Visual%20Awareness%20Technologies%20and%20Consulting%20Inc/apps/cdb-demo/cdb.map&amp;MODE=browse&amp;TEMPLATE=openlayers&amp;LAYERS=all"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/EPIC_Ready/apps/cdb-demo/cdb-features.map&amp;SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;TYPENAMES=ms:GTModelGeometry_Mda&amp;STARTINDEX=0&amp;COUNT=16384&amp;FILTER=&lt;Filter&gt;&lt;And&gt;&lt;PropertyIsEqualTo&gt;&lt;ValueReference&gt;uref&lt;/ValueReference&gt;&lt;Literal&gt;0&lt;/Literal&gt;&lt;/PropertyIsEqualTo&gt;&lt;PropertyIsEqualTo&gt;&lt;ValueReference&gt;rref&lt;/ValueReference&gt;&lt;Literal&gt;0&lt;/Literal&gt;&lt;/PropertyIsEqualTo&gt;&lt;/And&gt;&lt;/Filter&gt; HTTP/1.1"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerDebuggerType>NativeOnly</LocalDebuggerDebuggerType>
   </PropertyGroup>

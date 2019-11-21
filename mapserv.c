@@ -73,7 +73,7 @@ void msCleanupOnExit( void )
   fprintf( fp_out, "In msCleanupOnExit\n" );
   fclose( fp_out );
 #endif
-  msCleanup(1);
+  msCleanup();
 }
 #endif
 
@@ -88,7 +88,7 @@ void msCleanupOnExit( void )
 static int msIO_fcgiRead( void *cbData, void *data, int byteCount )
 
 {
-  return FCGI_fread( data, 1, byteCount, (FCGI_FILE *) cbData );
+  return (int)FCGI_fread( data, 1, byteCount, (FCGI_FILE *) cbData );
 }
 
 /************************************************************************/
@@ -100,7 +100,7 @@ static int msIO_fcgiRead( void *cbData, void *data, int byteCount )
 static int msIO_fcgiWrite( void *cbData, void *data, int byteCount )
 
 {
-  return FCGI_fwrite( data, 1, byteCount, (FCGI_FILE *) cbData );
+  return (int)FCGI_fwrite( data, 1, byteCount, (FCGI_FILE *) cbData );
 }
 
 /************************************************************************/
