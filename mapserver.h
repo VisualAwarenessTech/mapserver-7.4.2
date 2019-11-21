@@ -1731,7 +1731,6 @@ typedef struct labelObj labelObj;
 #ifndef SWIG
     char **items;
     void *iteminfo; /* connection specific information necessary to retrieve values */
-	void *itemtype; /* connection specific information necessary to provide handeling options*/
     expressionObj filter; /* connection specific attribute filter */
     int bandsitemindex;
     int filteritemindex;

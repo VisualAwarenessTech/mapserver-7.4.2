@@ -1869,7 +1869,6 @@ int msGMLWriteWFSQuery(mapObj *map, FILE *stream, const char *default_namespace_
 
   } /* next layer */
 
-
   return(MS_SUCCESS);
 
 #else /* Stub for mapscript */
@@ -2122,16 +2121,13 @@ gmlItemListObj *msGMLGetItems(layerObj *layer, const char *metadata_namespaces)
     free(itemList);
     return NULL;
   }
-  OGRFieldType * itemtypes = (OGRFieldType *)layer->itemtype;
+
   for(i=0; i<layer->numitems; i++) {
     item = &(itemList->items[i]);
 
     item->name = msStrdup(layer->items[i]);  /* initialize the item */
     item->alias = NULL;
-	if (itemtypes[i] == OFTBinary)
-		item->type = msStrdup("Binary");
-	else
-		item->type = NULL;
+    item->type = NULL;
     item->template = NULL;
     item->encode = MS_TRUE;
     item->visible = MS_FALSE;

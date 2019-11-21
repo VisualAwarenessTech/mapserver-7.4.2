@@ -741,12 +741,7 @@ static FilterEncodingNode* FLTGetTopBBOX(FilterEncodingNode *psNode)
 int FLTLayerApplyPlainFilterToLayer(FilterEncodingNode *psNode, mapObj *map,
                                     int iLayerIndex)
 {
-  if (map->debug == MS_DEBUGLEVEL_VVV)
-  {
-	msDebug("FLTLayerApplyPlainFilterToLayer(): Entered\n");
-  }
-
-  char *pszExpression  = NULL;
+  char *pszExpression  =NULL;
   int status =MS_FALSE;
   layerObj* lp = GET_LAYER(map, iLayerIndex);
 

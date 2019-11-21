@@ -297,9 +297,6 @@ int msLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery)
     if (rv != MS_SUCCESS)
       return rv;
   }
-#ifdef _DEBUG
-  msDebug("In msLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery) calling LayerWhichShapes\n");
-#endif
   return layer->vtable->LayerWhichShapes(layer, rect, isQuery);
 }
 
@@ -458,10 +455,6 @@ void msLayerClose(layerObj *layer)
     layer->numitems = 0;
   }
 
-  if (layer->itemtype) {
-	  msFree(layer->itemtype);
-	  layer->itemtype = NULL;
-  }
   /* clear out items used as part of expressions (bug #2702) -- what about the layer filter? */
   msLayerFreeExpressions(layer);
 
@@ -507,11 +500,6 @@ int msLayerGetItems(layerObj *layer)
     msFreeCharArray(layer->items, layer->numitems);
     layer->items = NULL;
     layer->numitems = 0;
-  }
-
-  if (layer->itemtype) {
-	  msFree(layer->itemtype);
-	  layer->itemtype = NULL;
   }
 
   if ( ! layer->vtable) {
@@ -810,10 +798,6 @@ int msLayerWhichItems(layerObj *layer, int get_all, const char *metadata)
     layer->items = NULL;
     layer->numitems = 0;
   }
-  if (layer->itemtype) {
-	  msFree(layer->itemtype);
-	  layer->itemtype = NULL;
-  }
 
   /*
   ** need a count of potential items/attributes needed
@@ -1042,10 +1026,6 @@ int msLayerSetItems(layerObj *layer, char **items, int numitems)
     msFreeCharArray(layer->items, layer->numitems);
     layer->items = NULL;
     layer->numitems = 0;
-  }
-  if (layer->itemtype) {
-	  msFree(layer->itemtype);
-	  layer->itemtype = NULL;
   }
 
   /* now allocate and set the layer item parameters  */
@@ -1859,10 +1839,7 @@ int LayerDefaultGetNumFeatures(layerObj *layer)
         layer->items = NULL;
         layer->numitems = 0;
     }
-	if (layer->itemtype) {
-		msFree(layer->itemtype);
-		layer->itemtype = NULL;
-	}
+
     status = msLayerWhichShapes(layer, extent, MS_FALSE);
     if (status == MS_DONE) { /* no overlap */
         return 0;

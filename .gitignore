@@ -22,3 +22,4 @@ msvc_applications-examples/examples/osgviewerFLTK/example_osgviewerFLTK.vcxproj.
 msvc/src/osgPlugins/dw/osgdb_dw.vcxproj.user
 msvc/renderers/mvt/vector_tile.pb-c.c
 msvc/renderers/mvt/vector_tile.pb-c.h
+msvc/temp.png
