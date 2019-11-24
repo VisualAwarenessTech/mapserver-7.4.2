@@ -807,9 +807,9 @@ int FLTLayerApplyPlainFilterToLayer(FilterEncodingNode *psNode, mapObj *map,
     if(map->debug == MS_DEBUGLEVEL_VVV)
     {
       if( pszExpression )
-        msDebug("FLTLayerApplyPlainFilterToLayer(): %s, rect=%.15g,%.15g,%.15g,%.15g\n", pszExpression, rect.minx, rect.miny, rect.maxx, rect.maxy);
+        msDebug("FLTLayerApplyPlainFilterToLayer(): %s, rect=%.15g,%.15g,%.15g,%.15g Layer %s\n", pszExpression, rect.minx, rect.miny, rect.maxx, rect.maxy,lp->name);
       else
-        msDebug("FLTLayerApplyPlainFilterToLayer(): rect=%.15g,%.15g,%.15g,%.15g\n", rect.minx, rect.miny, rect.maxx, rect.maxy);
+        msDebug("FLTLayerApplyPlainFilterToLayer(): rect=%.15g,%.15g,%.15g,%.15g Layer %s\n", rect.minx, rect.miny, rect.maxx, rect.maxy,lp->name);
     }
 
     status = FLTApplyFilterToLayerCommonExpressionWithRect(map, iLayerIndex,

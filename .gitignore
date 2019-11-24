@@ -23,3 +23,5 @@ msvc/src/osgPlugins/dw/osgdb_dw.vcxproj.user
 msvc/renderers/mvt/vector_tile.pb-c.c
 msvc/renderers/mvt/vector_tile.pb-c.h
 msvc/temp.png
+msvc/temp.gfs
+msvc/temp.gml

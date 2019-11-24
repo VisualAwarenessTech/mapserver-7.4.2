@@ -1741,6 +1741,10 @@ int msGMLWriteWFSQuery(mapObj *map, FILE *stream, const char *default_namespace_
             msOWSGetEPSGProj(&(lp->projection), &(lp->metadata), "FGO", MS_TRUE, &srs);
       }
 #endif
+	  if (map->debug == MS_DEBUGLEVEL_VVV)
+	  {
+		 msDebug("msGMLWriteWFSQuery() Has %d Features to Transmit From Layer %s\n", lp->resultcache->numresults, lp->name);
+	  }
 
       for(j=0; j<lp->resultcache->numresults; j++) {
         char* pszFID;
@@ -1853,7 +1857,10 @@ int msGMLWriteWFSQuery(mapObj *map, FILE *stream, const char *default_namespace_
         pszFID = NULL;
         msFreeShape(&shape); /* init too */
       }
-
+	  if (map->debug == MS_DEBUGLEVEL_VVV)
+	  {
+		  msDebug("msGMLWriteWFSQuery() Sent %d Features From Layer %s\n", j, lp->name);
+	  }
       msFree(srs);
 
       /* done with this layer, do a little clean-up */

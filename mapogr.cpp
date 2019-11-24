@@ -2653,7 +2653,12 @@ static int msOGRFileWhichShapes(layerObj *layer, rectObj rect, msOGRFileInfo *ps
             msFree(pszOGRFilter);
         } else
             OGR_L_SetAttributeFilter( psInfo->hLayer, NULL );
-        
+#ifdef _DEBUG
+		OGR_L_ResetReading(psInfo->hLayer);
+		int numFeatures = OGR_L_GetFeatureCount(psInfo->hLayer, 1);
+		const char * name = OGR_L_GetName(psInfo->hLayer);
+		msDebug("msOGRFileWhichShapes: Layer %s has %d Features", name, numFeatures);
+#endif
     }
 
     msFree(select);
@@ -4274,7 +4279,15 @@ int msOGRLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery)
 #ifdef USE_OGR
   msOGRFileInfo *psInfo =(msOGRFileInfo*)layer->layerinfo;
   msOGRFileInfo *psTileInfo = NULL;
+  int isAttributeQuerry = 0;
   if (psInfo->poCurTile && isQuery)
+  {
+	  msOGRFileInfo *pstestinfo = psInfo->poCurTile;
+	  if (pstestinfo->pszSelect || psInfo->pszWHERE)
+		  isAttributeQuerry = 1;
+  }
+
+  if (psInfo->poCurTile && isQuery && isAttributeQuerry)
   {
 	  psTileInfo = (msOGRFileInfo*)psInfo->poCurTile;
 
@@ -4340,8 +4353,11 @@ int msOGRLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery)
   msDebug("In msOGRLayerWhichShapes(layerObj *layer, rectObj rect, int isQuery) Querry Sucessfull\n");
 #endif
   
-  if (psInfo->poCurTile && isQuery)
+  if (psInfo->poCurTile && isAttributeQuerry)
 	  return MS_SUCCESS;
+  else if (psInfo->poCurTile)
+	  OGR_L_ResetReading(psInfo->hLayer);
+	  
 
 //  return msOGRFileReadTile(layer, psTileInfo ? psTileInfo : psInfo);
   return msOGRFileReadTile(layer, psInfo);

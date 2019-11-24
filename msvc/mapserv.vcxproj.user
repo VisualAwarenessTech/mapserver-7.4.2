@@ -25,7 +25,7 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">
-    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/EPIC_Ready/apps/cdb-demo/cdb.map&amp;MODE=browse&amp;TEMPLATE=openlayers&amp;LAYERS=all" &gt; temp.png</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-nh "QUERY_STRING=map=C:/EPIC_Ready/apps/cdb-demo/cdb-features.map&amp;SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;TYPENAMES=ms:GSFeature_S001_T001_Pnt_L00&amp;STARTINDEX=0&amp;COUNT=16384 HTTP/1.1" &gt; temp.gml</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerDebuggerType>NativeOnly</LocalDebuggerDebuggerType>
   </PropertyGroup>
